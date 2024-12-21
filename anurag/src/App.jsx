@@ -30,9 +30,8 @@ function App() {
 //     </div>
 //   </MacBookDesktop>
 // </div>
-<div className="min-h-screen flex items-center justify-center bg-gray-900 p-4">
-<DesktopScreen>
-</DesktopScreen>
+<div className="h-screen w-full flex justify-center items-center   bg-gray-900 p-4">
+<MacBookDesktop/>
 </div>
   );
 }

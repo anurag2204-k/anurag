@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Apple, Wifi, Battery, Search, Calendar, Clock } from 'lucide-react'
-
+import walImage from '../assets/ag.jpg' 
 
 
 const MacBookDesktop= ({ children }) => {
@@ -12,7 +12,13 @@ const MacBookDesktop= ({ children }) => {
   }, [])
 
   return (
-    <div className="w-full max-w-[1280px]  mx-auto bg-[#f0f0f0] rounded-lg shadow-xl overflow-hidden">
+    <div className="w-full max-w-[1280px]  mx-auto bg-[#f0f0f0] rounded-lg shadow-xl overflow-hidden" style={{
+      width: 'min(90vh * (16/9.5), 100vw)', // Constrain width by both aspect ratio and viewport width
+      height: 'min(90vh, 100vw * (9.5/16))', // Constrain height by both aspect ratio and viewport height
+      backgroundImage: `url(${walImage})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+    }}>
       <div className="relative aspect-[16/9.5] bg-[url('/wallpaper.jpg')] bg-cover bg-center">
         {/* Menu Bar */}
         <div className="absolute top-0 left-0 right-0 h-6 bg-black bg-opacity-20 backdrop-blur-md text-white flex items-center justify-between px-4 text-xs">
