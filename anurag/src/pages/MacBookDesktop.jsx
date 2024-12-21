@@ -19,7 +19,7 @@ const MacBookDesktop= ({ children }) => {
       backgroundSize: 'cover',
       backgroundPosition: 'center',
     }}>
-      <div className="relative aspect-[16/9.5] bg-[url('/wallpaper.jpg')] bg-cover bg-center">
+      <div className="relative aspect-[16/9.5]   ">
         {/* Menu Bar */}
         <div className="absolute top-0 left-0 right-0 h-6 bg-black bg-opacity-20 backdrop-blur-md text-white flex items-center justify-between px-4 text-xs">
           <div className="flex items-center space-x-4">
