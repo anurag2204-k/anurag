@@ -6,6 +6,8 @@ import MacBookDesktop from './MacBookDesktop'; // Example content for "My Docume
 import AboutUs from './Aboutus'; // Example content for "Recycle Bin"
 import Timid from './Timid'; // Example content for "Network"
 import TechnologiesPage from './TechnologiesPage';
+import SkillsPage from './SkillsPage';
+import ProjectsPage from '../components/ProjectsPage';
 
 const DesktopScreen = ({ children }) => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -22,21 +24,21 @@ const DesktopScreen = ({ children }) => {
     { name: 'Mac book desktop', icon: <Trash />, content: <MacBookDesktop /> },
     { name: 'About us', icon: <Folder />, content: <AboutUs /> },
     { name: 'Timid', icon: <Globe />, content: <Timid /> },
-    { name: 'Skills', icon: <Globe />, content: <TechnologiesPage /> }
+    { name: 'Skills', icon: <Globe />, content: <SkillsPage /> },
+    { name: 'Projects', icon: <Globe />, content: <ProjectsPage /> }
   ];
 
   return (
     <div className="flex justify-center items-center w-full h-screen">
       <div
         className="relative border-4 border-gray-300 rounded-lg shadow-xl"
-        style={{
-          width: 'calc(90vh * (16 / 9))', // Maintain 16:9 aspect ratio
-          height: '90vh', // Constrain to viewport height
-          maxWidth: '100vw', // Prevent exceeding viewport width
-          backgroundImage: `url(${walImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
+       style={{
+             width: 'min(90vh * (16/9), 100vw)', // Constrain width by both aspect ratio and viewport width
+             height: 'min(90vh, 100vw * (9/16))', // Constrain height by both aspect ratio and viewport height
+             backgroundImage: `url(${walImage})`,
+             backgroundSize: 'cover',
+             backgroundPosition: 'center',
+           }}
       >
         {/* Conditionally Render Active Item Content */}
         {activeItem ? (
