@@ -5,6 +5,7 @@ import IPhoneScreen from './Iphone'; // Example content for "My Computer"
 import MacBookDesktop from './MacBookDesktop'; // Example content for "My Documents"
 import AboutUs from './Aboutus'; // Example content for "Recycle Bin"
 import Timid from './Timid'; // Example content for "Network"
+import TechnologiesPage from './TechnologiesPage';
 
 const DesktopScreen = ({ children }) => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -21,6 +22,7 @@ const DesktopScreen = ({ children }) => {
     { name: 'Mac book desktop', icon: <Trash />, content: <MacBookDesktop /> },
     { name: 'About us', icon: <Folder />, content: <AboutUs /> },
     { name: 'Timid', icon: <Globe />, content: <Timid /> },
+    { name: 'Skills', icon: <Globe />, content: <TechnologiesPage /> }
   ];
 
   return (
