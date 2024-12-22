@@ -22,7 +22,7 @@ const AboutUs = () => {
 
 
           <img
-            src='/ag.jpg'
+            src='/linkedin+profile.png'
             alt="Anurag Khobragade's Photo"
             className="rounded-full w-40 h-40 object-cover shadow-lg border-4 border-gradient-to-r from-purple-400 via-pink-500 to-red-500 p-1 hover:scale-105 transform transition duration-300 ease-in-out"
           />

@@ -8,6 +8,16 @@ import Timid from './Timid'; // Example content for "Network"
 import TechnologiesPage from './TechnologiesPage';
 import SkillsPage from './SkillsPage';
 import ProjectsPage from '../components/ProjectsPage';
+import app from '/app.png';
+import brain from '/brain.png';
+import github from '/github.png';
+import linkedin from '/linkedin.png';
+import me from '/me.svg';
+import news from '/news.jpg';
+import telegram from '/telegram.png';
+import twitter from '/x.png';
+import whatsapp from '/whatsapp.png';
+import moviegig from '/film-roll.png'
 
 const DesktopScreen = ({ children }) => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -20,13 +30,25 @@ const DesktopScreen = ({ children }) => {
   }, []);
 
   const items = [
-    { name: 'Iphone', icon: <Folder />, content: <IPhoneScreen /> },
-    { name: 'Mac book desktop', icon: <Trash />, content: <MacBookDesktop /> },
-    { name: 'About us', icon: <Folder />, content: <AboutUs /> },
-    { name: 'Timid', icon: <Globe />, content: <Timid /> },
-    { name: 'Skills', icon: <Globe />, content: <SkillsPage /> },
-    { name: 'Projects', icon: <Globe />, content: <ProjectsPage /> }
+    // { name: 'Iphone', icon: <Folder />, content: <IPhoneScreen /> },
+    // { name: 'Mac book desktop', icon: <Trash />, content: <MacBookDesktop /> },
+    { name: 'About me', icon: me, content: <AboutUs /> },
+    { name: 'Timid', icon: brain, content: <Timid /> },
+    { name: 'Skills', icon: brain, content: <SkillsPage /> },
+    { name: 'Projects', icon: app, content: <ProjectsPage /> }
   ];
+  const linked = [
+    { name: 'Github', icon: github, to:"https://github.com/anurag2204-k"},
+    { name: 'Linkedin', icon: linkedin, to:"https://www.linkedin.com/in/anuragk22/"},
+    
+    { name: 'Telegram', icon: telegram, to:"https://t.me/Anuragkho"},
+    { name: 'Twitter', icon: twitter, to:"https://x.com/anurag_k04"},
+    { name: 'Whatsapp', icon: whatsapp, to:"https://wa.me/qr/LZDEC72CM5KXP1"},
+    { name: 'NewzSage', icon: news, to:"https://newz-sage.vercel.app/"},
+    { name: 'MovieGig', icon: moviegig, to:"https://moviegig.onrender.com/"},
+
+
+  ]
 
   return (
     <div className="flex justify-center items-center w-full h-screen">
@@ -66,8 +88,8 @@ const DesktopScreen = ({ children }) => {
                 className="w-16 flex flex-col items-center group cursor-pointer relative"
                 onClick={() => setActiveItem(item)} // Set active item
               >
-                <div className="w-12 h-12 bg-blue-500 rounded-lg mb-1 flex justify-center items-center">
-                  {item.icon} {/* Render item icon */}
+                <div className="w-12 h-12   rounded-lg mb-1 flex justify-center items-center p-1">
+                <img src={item.icon} alt={item.name} className="w-full h-full object-cover" />
                 </div>
                 <span className="text-xs text-white text-center truncate w-full">
                   {item.name}
@@ -77,6 +99,28 @@ const DesktopScreen = ({ children }) => {
                 </div>
               </div>
             ))}
+
+
+{linked.map((item) => (
+              <div
+                key={item.name}
+                className="w-16 flex flex-col items-center group cursor-pointer relative"
+                onClick={() => window.open(item.to, '_blank')} // Set active item
+              >
+                <div className="w-12 h-12   rounded-lg mb-1 flex justify-center items-center p-1">
+                <img src={item.icon} alt={item.name} className="w-full h-full object-cover" />
+                </div>
+                <span className="text-xs text-white text-center truncate w-full">
+                  {item.name}
+                </span>
+                <div className="absolute top-0 left-0 w-full text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                  {item.name}
+                </div>
+              </div>
+            ))}
+
+
+
           </div>
         )}
 
@@ -120,4 +164,9 @@ const DesktopScreen = ({ children }) => {
   );
 };
 
+
+
+
 export default DesktopScreen;
+
+
