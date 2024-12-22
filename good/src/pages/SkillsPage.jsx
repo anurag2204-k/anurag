@@ -3,16 +3,16 @@ import { skillsData } from '../data/skillsData';
 import { SunIcon, MoonIcon } from '@heroicons/react/24/solid';
 
 const SkillCard = ({ skill }) => (
-  <div className="bg-white dark:bg-gray-800 rounded-lg p-3 shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 flex items-center space-x-2">
-    {skill.icon && <skill.icon className="w-6 h-6 text-blue-500 dark:text-blue-400" />}
-    <span className="text-sm font-medium text-gray-800 dark:text-gray-200">{skill.name}</span>
+  <div className=" border rounded-md p-2 shadow-sm transition-all duration-300 hover:shadow-md hover:scale-105 flex items-center space-x-1.5">
+    {skill.icon && <skill.icon className="w-4 h-4 text-blue-600" />}
+    <span className="text-xs font-medium text-gray-800">{skill.name}</span>
   </div>
 );
 
 const SubcategorySection = ({ subcategory }) => (
-  <div className="mb-6">
-    <h4 className="text-lg font-semibold mb-3 text-gray-700 dark:text-gray-300">{subcategory.name}</h4>
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+  <div className="mb-4">
+    <h4 className="text-sm font-semibold mb-2 text-gray-800">{subcategory.name}</h4>
+    <div className="grid grid-cols-2 gap-1 sm:grid-cols-3 sm:gap-2 md:grid-cols-4">
       {subcategory.skills.map((skill, index) => (
         <SkillCard key={index} skill={skill} />
       ))}
@@ -21,14 +21,16 @@ const SubcategorySection = ({ subcategory }) => (
 );
 
 const CategorySection = ({ category }) => (
-  <div className="bg-gray-100 dark:bg-gray-900 rounded-lg p-6 mb-8 shadow-lg">
-    <h3 className="text-2xl font-bold mb-6 text-gray-800 dark:text-gray-200">{category.category}</h3>
+  <div className="bg-white rounded-md p-4 mb-6 shadow-md  ">
+    <h3 className="text-xl font-bold mb-3 text-transparent bg-gradient-to-r from-teal-400 via-blue-500 to-purple-600 bg-clip-text">
+      {category.category}
+    </h3>
     {category.subcategories ? (
       category.subcategories.map((subcategory, index) => (
         <SubcategorySection key={index} subcategory={subcategory} />
       ))
     ) : (
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+      <div className="grid grid-cols-2 gap-1 sm:grid-cols-3 sm:gap-2 md:grid-cols-4">
         {category.skills.map((skill, index) => (
           <SkillCard key={index} skill={skill} />
         ))}
@@ -46,27 +48,27 @@ const SkillsPage = () => {
   };
 
   return (
-    <div className={`min-h-screen ${darkMode ? 'dark' : ''}`}>
-      <div className="bg-gray-200 dark:bg-gray-800 transition-colors duration-200">
-        <div className="container mx-auto py-12 px-4">
-          <div className="flex justify-between items-center mb-8">
-            <h1 className="text-4xl font-bold text-gray-800 dark:text-white">My Skills & Tech Stack</h1>
-            <button
-              onClick={toggleDarkMode}
-              className="p-2 rounded-full bg-gray-300 dark:bg-gray-700 transition-colors duration-200"
-            >
-              {darkMode ? (
-                <SunIcon className="w-6 h-6 text-yellow-400" />
-              ) : (
-                <MoonIcon className="w-6 h-6 text-gray-800" />
-              )}
-            </button>
-          </div>
-          <div className="space-y-8">
-            {skillsData.map((category, index) => (
-              <CategorySection key={index} category={category} />
-            ))}
-          </div>
+    <div className={`min-h-screen bg-gray-50 ${darkMode ? 'dark bg-gray-800' : ''}`}>
+      <div className="container mx-auto py-6 px-3 sm:py-8 sm:px-4 lg:px-6">
+        <div className="flex justify-between items-center mb-6 sm:mb-8">
+          <h1 className="text-2xl font-bold text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text">
+            My Skills & Tech Stack
+          </h1>
+          <button
+            onClick={toggleDarkMode}
+            className="p-1 sm:p-2 rounded-full bg-gradient-to-r from-gray-200 to-gray-400 hover:from-gray-300 hover:to-gray-500 transition-all duration-200 shadow-sm"
+          >
+            {darkMode ? (
+              <SunIcon className="w-4 h-4 text-yellow-400" />
+            ) : (
+              <MoonIcon className="w-4 h-4 text-gray-800" />
+            )}
+          </button>
+        </div>
+        <div className="space-y-6 ">
+          {skillsData.map((category, index) => (
+            <CategorySection key={index} category={category} />
+          ))}
         </div>
       </div>
     </div>
@@ -74,4 +76,3 @@ const SkillsPage = () => {
 };
 
 export default SkillsPage;
-

@@ -4,12 +4,12 @@ export const projects = [
       title: 'Covalence',
       shortDescription: 'A collaborative platform for remote teams',
       description: 'Covalence is a modern collaboration platform designed to make remote meetings more effective and engaging. It features real-time collaboration tools, meeting scheduling, and interactive whiteboards.',
-      thumbnail: '/projects/covalence/thumbnail.png',
+      thumbnail: '/ag.jpg',
       images: [
-        '/projects/covalence/screen1.png',
-        '/projects/covalence/screen2.png',
-        '/projects/covalence/screen3.png',
-        '/projects/covalence/screen4.png'
+        '/ag.jpg',
+        '/ag.jpg',
+        'js.png',
+        '/ag.jpg'
       ],
       technologies: [
         'React',
@@ -33,7 +33,7 @@ export const projects = [
       title: 'My Diary',
       shortDescription: 'A personal diary and memory capturing app',
       description: 'My Diary is a mobile application that helps users capture and organize their memories through photos, notes, and journal entries. It features a clean, intuitive interface and powerful organization tools.',
-      thumbnail: '/projects/my-diary/thumbnail.png',
+      thumbnail: '/next.png',
       images: [
         '/projects/my-diary/screen1.png',
         '/projects/my-diary/screen2.png',
@@ -61,7 +61,7 @@ export const projects = [
       title: 'Betterteam',
       shortDescription: 'Team management and collaboration platform',
       description: 'Betterteam is a comprehensive team management solution that helps businesses streamline their workflows and improve team collaboration.',
-      thumbnail: '/projects/betterteam/thumbnail.png',
+      thumbnail: '/wal.png',
       images: [
         '/projects/betterteam/screen1.png',
         '/projects/betterteam/screen2.png',
