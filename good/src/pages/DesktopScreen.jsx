@@ -33,7 +33,7 @@ const DesktopScreen = ({ children }) => {
     // { name: 'Iphone', icon: <Folder />, content: <IPhoneScreen /> },
     // { name: 'Mac book desktop', icon: <Trash />, content: <MacBookDesktop /> },
     { name: 'About me', icon: me, content: <AboutUs /> },
-    { name: 'Timid', icon: brain, content: <Timid /> },
+    // { name: 'Timid', icon: brain, content: <Timid /> },
     { name: 'Skills', icon: brain, content: <SkillsPage /> },
     { name: 'Projects', icon: app, content: <ProjectsPage /> }
   ];
