@@ -81,7 +81,7 @@ const DesktopScreen = ({ children }) => {
           </div>
         ) : (
           /* Main Desktop Content */
-          <div className="flex flex-col flex-wrap py-5 pl-4 gap-4 max-h-full w-16">
+          <div className="flex flex-col flex-wrap py-5 pl-4 gap-4 max-h-full w-16 overflow-y-scroll">
             {items.map((item) => (
               <div
                 key={item.name}
