@@ -51,9 +51,9 @@ const DesktopScreen = ({ children }) => {
   ]
 
   return (
-    <div className="flex justify-center items-center w-full h-screen">
+    <div className="flex justify-center items-center w-full h-screen ">
       <div
-        className="relative border-4 border-gray-300 rounded-lg shadow-xl"
+        className="relative border-4 border-gray-300 rounded-lg shadow-xl "
        style={{
              width: 'min(90vh * (16/9), 100vw)', // Constrain width by both aspect ratio and viewport width
              height: 'min(90vh, 100vw * (9/16))', // Constrain height by both aspect ratio and viewport height
@@ -64,7 +64,7 @@ const DesktopScreen = ({ children }) => {
       >
         {/* Conditionally Render Active Item Content */}
         {activeItem ? (
-          <div className="absolute top-0 left-0 right-0 bottom-10 bg-gray-800 text-white overflow-y-scroll">
+          <div className="absolute top-0 left-0 right-0 bottom-10 bg-gray-800 text-white overflow-y-auto ">
             {/* Title Bar */}
             <div className="sticky top-0 z-50 bg-gradient-to-b from-black via-gray-600 to-gray-100 p-2 text-white flex items-center justify-between ">
               <span className="font-bold">{activeItem.name}</span>
@@ -81,7 +81,7 @@ const DesktopScreen = ({ children }) => {
           </div>
         ) : (
           /* Main Desktop Content */
-          <div className="flex flex-col flex-wrap py-5 pl-4 gap-4 max-h-full w-16 overflow-y-scroll">
+          <div className="flex flex-col flex-wrap py-5 pl-4 gap-4 max-h-full w-16 ">
             {items.map((item) => (
               <div
                 key={item.name}
