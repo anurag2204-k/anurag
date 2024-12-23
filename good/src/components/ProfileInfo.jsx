@@ -2,10 +2,11 @@ import React from "react";
 
 const ProfileInfo = () => {
   const info = [
-    ["Name", "Your Name"],
-    ["Role", "Web Developer"],
-    ["Location", "Your Location"],
-    ["Contact", "your.email@example.com"],
+    ["Name", "Anurag Khobragade"],
+    ["Role", "Student"],
+    ["Location", "Nagpur, India"],
+    ["email", "bt22csd014@iiitn.ac.in"],
+    
   ];
 
   return (

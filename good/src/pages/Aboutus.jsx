@@ -1,6 +1,7 @@
 import React from 'react';
 import profilePic from '../assets/ag.jpg'
 import ProfileInfo from '../components/ProfileInfo';
+import { FaLightbulb, FaShieldAlt, FaUsers } from 'react-icons/fa'; 
 const AboutUs = () => {
   return (
     <div className="bg-gray-100 min-h-screen flex items-center justify-center font-mono" >
@@ -16,7 +17,7 @@ const AboutUs = () => {
               </span> ✨
             </p>
             <p className="mt-2 text-lg text-gray-500">
-              🎨 Designer | 💻 Developer | 🚀 Dreamer
+              🎨 A passionate Computer Science enthusiast
             </p>
           </div>
 
@@ -28,22 +29,27 @@ const AboutUs = () => {
           />
 
         </div>
+        <p className="text-lg text-gray-700 mb-4 tab-space">
+  With a flair for solving real-world problems through innovative software solutions. Currently pursuing my Bachelor's in Computer Science and Engineering at the Indian Institute of Information Technology, Nagpur, I am driven by a deep curiosity for data science, artificial intelligence, and building scalable applications.
+</p>
         <p className="text-lg text-gray-700 mb-4">
-          We are a passionate team committed to building innovative solutions and
-          providing exceptional services. Our goal is to help businesses and
-          individuals reach their full potential through technology and creativity.
+        With a strong foundation in data structures, algorithms, and full-stack development, I enjoy creating impactful projects using cutting-edge technologies. My experience ranges from leading collaborative teams on software projects to tackling complex challenges in the realms of data analytics and machine learning.
         </p>
-        <p className="text-lg text-gray-700 mb-4">
-          With years of experience in the industry, we bring expertise in
-          web development, data analysis, and design. Our team is dedicated to
-          delivering high-quality products that meet the unique needs of our clients.
-        </p>
-        <h2 className="text-2xl font-semibold text-gray-800 mt-8">Our Values</h2>
-        <ul className="list-disc pl-6 mt-4 text-gray-700">
-          <li>Innovation: Continuously striving to push the boundaries of technology.</li>
-          <li>Integrity: Upholding honesty, transparency, and ethical practices.</li>
-          <li>Collaboration: Working together with our clients to achieve shared goals.</li>
-        </ul>
+        <h2 className="text-2xl md:text-3xl font-semibold text-gray-800 mt-8">My Values</h2>
+<ul className="list-disc pl-6 mt-4 text-gray-700 space-y-2">
+  <li className="flex items-center">
+    <FaLightbulb className="text-purple-500 mr-2 w-5 h-5 md:w-6 md:h-6" />
+    <span className="text-sm md:text-base">Innovation: I am passionate about pushing the boundaries of technology to develop creative and effective solutions.</span>
+  </li>
+  <li className="flex items-center">
+    <FaShieldAlt className="text-purple-500 mr-2 w-5 h-5 md:w-6 md:h-6" />
+    <span className="text-sm md:text-base">Integrity: I uphold honesty, transparency, and ethical practices in all my work and interactions.</span>
+  </li>
+  <li className="flex items-center">
+    <FaUsers className="text-purple-500 mr-2 w-5 h-5 md:w-6 md:h-6" />
+    <span className="text-sm md:text-base">Collaboration: I thrive in team environments, working closely with clients and colleagues to achieve common goals.</span>
+  </li>
+</ul>
         <ProfileInfo />
       </div>
     </div>
