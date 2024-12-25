@@ -6,7 +6,7 @@ import DesktopScreen from './pages/DesktopScreen';
 import HereWeGo from './pages/HereWeGo';
 function App() {
   return (
-    <div className="h-screen w-full flex justify-center items-center   bg-gray-900 p-4">
+    <div className="h-screen w-full flex justify-center items-center   bg-gray-600 p-4">
       <HereWeGo/>
     </div>
   );

@@ -76,7 +76,7 @@ const IPhoneScreen = ({ children }) => {
     {activeItem ? (
       <div className="absolute top-[30px] left-0 right-0 bottom-0 bg-gray-800 text-white overflow-y-auto">
         {/* Title Bar */}
-        <div className="sticky top-0 z-50 bg-gradient-to-b from-black via-gray-600 to-gray-100 p-2 text-white flex items-center justify-between">
+        <div className="sticky top-0 z-50 bg-gray-950  p-2 text-white flex items-center justify-between">
           <span className="font-bold">{activeItem.name}</span>
           <button
             onClick={() => setActiveItem(null)} // Close active item
