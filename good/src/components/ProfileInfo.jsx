@@ -5,7 +5,18 @@ const ProfileInfo = () => {
     ["Name", "Anurag Khobragade"],
     ["Role", "Student"],
     ["Location", "Nagpur, India"],
-    ["Email", "bt22csd014@iiitn.ac.in"],
+    ["College", "Indian Institute of Information Technology, Nagpur"],
+    ["Year", <p>3<sup>rd</sup> Year</p>],
+    ["Email", <a href="mailto:bt22csd014@iiitn.ac.in" >bt22csd014@iiitn.ac.in</a>],
+    ["Email", <a href="mailto:anuragk2204@gmail.com" className="text-gray-800">anuragk2204@gmail.com</a>],
+
+    ["Phone", "+91 8625971496"],
+    ["Github", <a href="https://github.com/anurag2204-k">https://github.com/anurag2204-k</a>],
+    ["Twitter", <a href="https://x.com/anurag_k04">https://x.com/anurag_k04</a>],
+    ["Linkedin", <a href="https://www.linkedin.com/in/anuragk22/">https://www.linkedin.com/in/anuragk22/</a>],
+    // ["Resume", "bt22csd014@iiitn.ac.in"],
+    ["MovieGig", <a href="https://moviegig.onrender.com/">https://moviegig.onrender.com/</a>],
+    ["NewzSage", <a href="https://newz-sage.vercel.app">https://newz-sage.vercel.app</a>],
   ];
 
   return (
