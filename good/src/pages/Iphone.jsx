@@ -20,7 +20,7 @@ import instagram from '/instagram.png'
 
 const IPhoneScreen = ({ children }) => {
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [activeItem, setActiveItem] = useState(null); // Track the active item
+  const [activeItem, setActiveItem] = useState(null); 
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000);
     return () => clearInterval(timer);
@@ -79,7 +79,7 @@ const IPhoneScreen = ({ children }) => {
         <div className="sticky top-0 z-50 bg-gray-950  p-2 text-white flex items-center justify-between">
           <span className="font-bold">{activeItem.name}</span>
           <button
-            onClick={() => setActiveItem(null)} // Close active item
+            onClick={() => setActiveItem(null)} 
             className="text-xl text-white hover:text-red-500"
           >
             &times;
@@ -96,7 +96,7 @@ const IPhoneScreen = ({ children }) => {
           <div
             key={item.name}
             className="flex flex-col items-center group cursor-pointer relative w-12 "
-            onClick={() => setActiveItem(item)} // Set active item
+            onClick={() => setActiveItem(item)} 
           >
             <div className="w-12 h-12 rounded-lg mb-1 flex justify-center items-center p-1">
               <img src={item.icon} alt={item.name} className="w-full h-full object-cover" />
@@ -114,7 +114,7 @@ const IPhoneScreen = ({ children }) => {
           <div
             key={item.name}
             className="flex flex-col items-center group cursor-pointer relative w-12"
-            onClick={() => window.open(item.to, '_blank')} // Open link
+            onClick={() => window.open(item.to, '_blank')} 
           >
             <div className="w-12 h-12 rounded-lg mb-1 flex justify-center items-center p-1">
               <img src={item.icon} alt={item.name} className="w-full h-full object-cover" />

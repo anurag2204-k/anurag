@@ -13,8 +13,8 @@ const MacBookDesktop= ({ children }) => {
 
   return (
     <div className="w-full max-w-[1280px]  mx-auto bg-[#f0f0f0] rounded-lg shadow-xl overflow-hidden" style={{
-      width: 'min(90vh * (16/9.5), 100vw)', // Constrain width by both aspect ratio and viewport width
-      height: 'min(90vh, 100vw * (9.5/16))', // Constrain height by both aspect ratio and viewport height
+      width: 'min(90vh * (16/9.5), 100vw)',
+      height: 'min(90vh, 100vw * (9.5/16))', 
       backgroundImage: `url(${walImage})`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',

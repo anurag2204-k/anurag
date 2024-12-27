@@ -10,7 +10,7 @@ const ProjectCard = ({ project, onClick }) => {
         <img
           src={project.thumbnail}
           alt={project.title}
-          className="w-full h-full object-contain" // Changed to object-contain
+          className="w-full h-full object-contain" 
         />
       </div>
       <div className="p-6">

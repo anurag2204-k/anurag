@@ -46,7 +46,7 @@ const SkillsPage = () => {
         { name: "Prisma", logo: "/logos/prisma.svg" },
       ],
     },
-    // Add more categories as needed
+    
   ];
 
   return (

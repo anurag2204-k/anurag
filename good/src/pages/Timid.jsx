@@ -28,9 +28,9 @@ const DesktopScreen = ({ children }) => {
       <div
         className="relative border-4 border-gray-300 rounded-lg shadow-xl"
         style={{
-          width: 'calc(90vh * (16 / 9))', // Maintain 16:9 aspect ratio
-          height: '90vh', // Constrain to viewport height
-          maxWidth: '100vw', // Prevent exceeding viewport width
+          width: 'calc(90vh * (16 / 9))', 
+          height: '90vh', 
+          maxWidth: '100vw', 
           backgroundImage: `url(${walImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
@@ -40,7 +40,7 @@ const DesktopScreen = ({ children }) => {
         {activeItem ? (
           <div className="absolute top-0 left-0 right-0 bottom-10 bg-gray-800 text-white  overflow-y-scroll">
             <button
-  onClick={() => setActiveItem(null)} // Close active item
+  onClick={() => setActiveItem(null)} 
   className="absolute top-1 right-1 w-10 h-10 border-2 border-transparent text-white opacity-0 hover:opacity-100 hover:border-red-500 hover:bg-red-500 hover:text-white rounded-full flex items-center justify-center transition-all duration-300 z-50"
 >
   <span className="text-xl">&times;</span>
@@ -54,7 +54,7 @@ const DesktopScreen = ({ children }) => {
               <div
                 key={item.name}
                 className="w-16 flex flex-col items-center group cursor-pointer relative"
-                onClick={() => setActiveItem(item)} // Set active item
+                onClick={() => setActiveItem(item)} 
               >
                 <div className="w-12 h-12 bg-blue-500 rounded-lg mb-1 flex justify-center items-center">
                   {item.icon} {/* Render item icon */}

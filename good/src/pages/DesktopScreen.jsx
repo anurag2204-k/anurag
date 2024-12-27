@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, Wifi, Battery, Volume2, ChevronUp, Trash, Folder, Globe } from 'lucide-react';
 import walImage from '../assets/ag.jpg';
-import IPhoneScreen from './Iphone'; // Example content for "My Computer"
-import MacBookDesktop from './MacBookDesktop'; // Example content for "My Documents"
-import AboutUs from './Aboutus'; // Example content for "Recycle Bin"
-import Timid from './Timid'; // Example content for "Network"
+import IPhoneScreen from './Iphone';
+import MacBookDesktop from './MacBookDesktop'; 
+import AboutUs from './Aboutus'; 
+import Timid from './Timid'; 
 import TechnologiesPage from './TechnologiesPage';
 import SkillsPage from './SkillsPage';
 import ProjectsPage from '../components/ProjectsPage';
@@ -59,8 +59,8 @@ const DesktopScreen = ({ children }) => {
       <div
         className="relative border-4 border-gray-300 rounded-lg shadow-xl "
        style={{
-             width: 'min(90vh * (16/9), 100vw)', // Constrain width by both aspect ratio and viewport width
-             height: 'min(90vh, 100vw * (9/16))', // Constrain height by both aspect ratio and viewport height
+             width: 'min(90vh * (16/9), 100vw)', 
+             height: 'min(90vh, 100vw * (9/16))', 
              backgroundImage: `url(${walImage})`,
              backgroundSize: 'cover',
              backgroundPosition: 'center',
@@ -73,7 +73,7 @@ const DesktopScreen = ({ children }) => {
             <div className="sticky top-0 z-50 bg-gradient-to-b from-black via-gray-600 to-gray-100 p-2 text-white flex items-center justify-between ">
               <span className="font-bold">{activeItem.name}</span>
               <button
-                onClick={() => setActiveItem(null)} // Close active item
+                onClick={() => setActiveItem(null)} 
                 className="text-xl text-white hover:text-red-500"
               >
                 &times;
@@ -90,7 +90,7 @@ const DesktopScreen = ({ children }) => {
               <div
                 key={item.name}
                 className="w-16 flex flex-col items-center group cursor-pointer relative"
-                onClick={() => setActiveItem(item)} // Set active item
+                onClick={() => setActiveItem(item)} 
               >
                 <div className="w-12 h-12   rounded-lg mb-1 flex justify-center items-center p-1">
                 <img src={item.icon} alt={item.name} className="w-full h-full object-cover" />
@@ -109,7 +109,7 @@ const DesktopScreen = ({ children }) => {
               <div
                 key={item.name}
                 className="w-16 flex flex-col items-center group cursor-pointer relative"
-                onClick={() => window.open(item.to, '_blank')} // Set active item
+                onClick={() => window.open(item.to, '_blank')} 
               >
                 <div className="w-12 h-12   rounded-lg mb-1 flex justify-center items-center p-1">
                 <img src={item.icon} alt={item.name} className="w-full h-full object-cover" />
