@@ -1,22 +1,26 @@
 export const projects = [
     {
-      id: 'covalence',
-      title: 'Covalence',
-      shortDescription: 'A collaborative platform for remote teams',
+      id: 'newzsage',
+      title: 'Newz Sage',
+      shortDescription: 'A collaborative platform for news posting',
       description: 'Covalence is a modern collaboration platform designed to make remote meetings more effective and engaging. It features real-time collaboration tools, meeting scheduling, and interactive whiteboards.',
-      thumbnail: '/ag.jpg',
+      thumbnail: 'newzsage/image.png',
       images: [
-        '/ag.jpg',
-        '/ag.jpg',
-        'js.png',
-        '/ag.jpg'
+        '/newzsage/signup.png',
+        '/newzsage/singuppage.png',
+        '/newzsage/news.png',
+        '/newzsage/newsMedia.png',
+        '/newzsage/comment.png',
+        '/newzsage/create.png',
+        '/newzsage/contact.png',
+        '/newzsage/info.png'
       ],
       technologies: [
-        'React',
+        'Vite',
         'TypeScript',
-        'WebRTC',
-        'Node.js',
-        'Socket.io',
+        'Tailwind',
+        'ShadCN',
+        'Cloudinary',
         'MongoDB'
       ],
       features: [
@@ -26,26 +30,30 @@ export const projects = [
         'Screen sharing capabilities',
         'Chat functionality'
       ],
-      liveUrl: 'https://covalence.example.com'
+      liveUrl: 'https://newz-sage.vercel.app'
     },
     {
-      id: 'my-diary',
-      title: 'My Diary',
-      shortDescription: 'A personal diary and memory capturing app',
+      id: 'MovieGig',
+      title: 'MovieGig',
+      shortDescription: 'A personal movie watchlist platform',
       description: 'My Diary is a mobile application that helps users capture and organize their memories through photos, notes, and journal entries. It features a clean, intuitive interface and powerful organization tools.',
-      thumbnail: '/next.png',
+      thumbnail: '/moviegig/filmroll.png',
       images: [
-        '/projects/my-diary/screen1.png',
-        '/projects/my-diary/screen2.png',
-        '/projects/my-diary/screen3.png',
-        '/projects/my-diary/screen4.png'
+        '/moviegig/dashboard.png',
+        '/moviegig/landing.png',
+        '/moviegig/trending.png',
+        '/moviegig/watchlist.png',
+        '/moviegig/signup.png',
+
       ],
       technologies: [
-        'React Native',
-        'Expo',
-        'Firebase',
-        'Cloud Storage',
-        'Redux'
+        'React',
+        'Vite',
+        'Express.js',
+        'Node.js',
+        'TyeScript',
+        'PostgreSQL',
+        'Prisma'
       ],
       features: [
         'Photo gallery with organization tools',
@@ -54,11 +62,11 @@ export const projects = [
         'Customizable themes',
         'Privacy features'
       ],
-      liveUrl: 'https://play.google.com/store/apps/details?id=com.mydiary'
+      liveUrl: 'https://moviegig.onrender.com/'
     },
     {
-      id: 'betterteam',
-      title: 'Betterteam',
+      id: 'discord',
+      title: 'Discord Clone', 
       shortDescription: 'Team management and collaboration platform',
       description: 'Betterteam is a comprehensive team management solution that helps businesses streamline their workflows and improve team collaboration.',
       thumbnail: '/wal.png',
