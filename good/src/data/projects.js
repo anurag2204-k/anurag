@@ -79,14 +79,37 @@ export const projects = [
       'TypeScript',
       'PostgreSQL',
       'Prisma',
-      'TailwindCSS'
+      'TailwindCSS',
+      'UploadThing',
+      'ShadcnUI',
+      'Clerk',
+      'Socket.io',
+      'LiveKit'
+
     ],
     features: [
-      'Real-time messaging with Socket.IO',
-      'Video/audio calls using LiveKit',
-      'Secure authentication with Clerk',
-      'Scalable database management',
-      'Responsive design with ShadCN'
+      'Client form validation and handling using react-hook-form',
+      'POST, DELETE, and GET routes in route handlers (app/api & pages)',
+      'Real-time messaging using Socket.io',
+      'Send attachments as messages using UploadThing',
+      'Delete & Edit messages in real time for all users',
+      'Create Text, Audio and Video call Channels',
+      '1:1 conversation between members',
+      '1:1 video calls between members',
+      'Member management (Kick, Role change Guest / Moderator)',
+      'Unique invite link generation & full working invite system',
+      'Infinite loading for messages in batches of 10 (tanstack/query)',
+      'Server creation and customization',
+      'Beautiful UI using TailwindCSS and ShadcnUI',
+      'Full responsivity and mobile UI',
+      'Light / Dark mode',
+      'Websocket fallback: Polling with alerts',
+      'ORM using Prisma',
+      'MySQL database using neondb',
+      'Authentication with Clerk',
+      
+       
+
     ],
     liveUrl: 'https://discordd-vert.vercel.app'
   }
