@@ -13,6 +13,16 @@
 }
 
 /* Mobile View */
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and newer Edge */
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* For Internet Explorer and Edge */
+  scrollbar-width: none; /* For Firefox */
+}
+
+
 @media (max-width: 768px) {
   .desktop-screen {
     display: none;

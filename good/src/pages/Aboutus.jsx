@@ -4,7 +4,7 @@ import { FaLightbulb, FaShieldAlt, FaUsers } from "react-icons/fa";
 
 const AboutUs = () => {
   return (
-    <div className="bg-gray-100 min-h-screen flex items-center justify-center font-mono">
+    <div className="bg-gray-100 min-h-screen flex items-center justify-center font-mono  no-scrollbar">
       <div className="max-w-4xl w-full bg-white p-8 m-2 rounded-lg shadow-lg">
         <div className="flex flex-col sm:flex-row items-center sm:justify-between space-y-4 sm:space-y-0 sm:space-x-4 p-8">
           {/* Header */}
