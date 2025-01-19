@@ -16,6 +16,7 @@ import twitter from '/x.png';
 import whatsapp from '/whatsapp.png';
 import moviegig from '/film-roll.png'
 import instagram from '/instagram.png'
+import leetcode from '/leetcode.png'
 
 
 const IPhoneScreen = ({ children }) => {
@@ -33,15 +34,16 @@ const IPhoneScreen = ({ children }) => {
   ]
 
   const linked = [
-    { name: 'Github', icon: github, to: "https://github.com/anurag2204-k" },
-    { name: 'Linkedin', icon: linkedin, to: "https://www.linkedin.com/in/anuragk22/" },
-    { name: 'Telegram', icon: telegram, to: "https://t.me/Anuragkho" },
-    { name: 'Instagram', icon: instagram, to: "https://www.instagram.com/anuragk2204/" },
-    { name: 'Twitter', icon: twitter, to: "https://x.com/anurag_k04" },
-    { name: 'Whatsapp', icon: whatsapp, to: "https://wa.me/qr/LZDEC72CM5KXP1" },
-    { name: 'NewzSage', icon: news, to: "https://newz-sage.vercel.app/" },
-    { name: 'MovieGig', icon: moviegig, to: "https://moviegig.onrender.com/" },
-  ]
+    { name: 'Github', icon: github, to:"https://github.com/anurag2204-k"},
+    { name: 'Instagram', icon: instagram, to:"https://www.instagram.com/anuragk2204/"},
+    { name: 'Leetcode', icon: leetcode, to:"https://leetcode.com/u/anurag_k22/"},
+    { name: 'Linkedin', icon: linkedin, to:"https://www.linkedin.com/in/anuragk22/"},
+    { name: 'MovieGig', icon: moviegig, to:"https://moviegig.onrender.com/"},
+    { name: 'NewzSage', icon: news, to:"https://newz-sage.vercel.app/"},
+    { name: 'Telegram', icon: telegram, to:"https://t.me/Anuragkho"},
+    { name: 'Twitter', icon: twitter, to:"https://x.com/anurag_k04"},
+    { name: 'Whatsapp', icon: whatsapp, to:"https://wa.me/qr/LZDEC72CM5KXP1"},
+    ]
 
   return (
     <div className="   ">
@@ -91,7 +93,7 @@ const IPhoneScreen = ({ children }) => {
       </div>
     ) : (
       /* Main Desktop Content */
-      <div className="flex   flex-wrap items-start justify-start gap-4 max-h-full w-full overflow-y-auto">
+      <div className="flex   flex-wrap items-center justify-center gap-4 max-h-full w-full ">
         {items.map((item) => (
           <div
             key={item.name}
