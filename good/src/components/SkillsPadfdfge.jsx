@@ -1,23 +1,7 @@
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
-const SkillCard = ({ title, skills }) => (
-  <Card className="w-full">
-    <CardHeader>
-      <CardTitle>{title}</CardTitle>
-    </CardHeader>
-    <CardContent>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
-        {skills.map((skill, index) => (
-          <div key={index} className="flex flex-col items-center">
-            <img src={skill.logo} alt={skill.name} className="w-16 h-16 object-contain mb-2" />
-            <span className="text-sm text-center">{skill.name}</span>
-          </div>
-        ))}
-      </div>
-    </CardContent>
-  </Card>
-);
+
 
 const SkillsPage = () => {
   const skillCategories = [
