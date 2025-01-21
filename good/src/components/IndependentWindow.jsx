@@ -1,19 +1,4 @@
-// import React from 'react';
-// import { Link } from 'react-router-dom';
 
-// const IndependentWindow= () => {
-//   return (
-//     <div className="bg-gray-200 p-4 rounded-md shadow-md">
-//       <h2 className="text-lg font-bold mb-2">Independent Window</h2>
-//       <p>This is the content of the independent window.</p>
-//       <Link to="/aboutus" className="hover:underline">Aboutus</Link>
-//     </div>
-//   );
-// };
-
-// export default IndependentWindow
-
-// IndependentWindow.tsx
 import React, { useState } from 'react';
 
 const IndependentWindow = () => {
