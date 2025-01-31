@@ -13,13 +13,14 @@ import brain from '/brain.png';
 import github from '/github.png';
 import linkedin from '/linkedin.png';
 import me from '/me.svg';
-import news from '/news.jpg';
+import news from '/new.png';
 import telegram from '/telegram.png';
 import twitter from '/x.png';
 import whatsapp from '/whatsapp.png';
 import moviegig from '/film-roll.png'
 import instagram from '/instagram.png'
 import leetcode from '/leetcode.png'
+import discord from '/discord.png'
 
 const DesktopScreen = ({ children }) => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -44,12 +45,15 @@ const DesktopScreen = ({ children }) => {
     { name: 'Instagram', icon: instagram, to:"https://www.instagram.com/anuragk2204/"},
     { name: 'Leetcode', icon: leetcode, to:"https://leetcode.com/u/anurag_k22/"},
     { name: 'Linkedin', icon: linkedin, to:"https://www.linkedin.com/in/anuragk22/"},
-    { name: 'MovieGig', icon: moviegig, to:"https://moviegig.onrender.com/"},
-    { name: 'NewzSage', icon: news, to:"https://newz-sage.vercel.app/"},
     { name: 'Telegram', icon: telegram, to:"https://t.me/Anuragkho"},
     { name: 'Twitter', icon: twitter, to:"https://x.com/anurag_k04"},
     { name: 'Whatsapp', icon: whatsapp, to:"https://wa.me/qr/LZDEC72CM5KXP1"},
     ]
+  const projects = [
+    { name: 'MovieGig', icon: moviegig, to:"https://moviegig.onrender.com/"},
+    { name: 'NewzSage', icon: news, to:"https://newz-sage.vercel.app/"},
+    { name: 'Discord-clone', icon: discord, to:"https://discordd-vert.vercel.app/"},
+  ]
 
   return (
     <div className="flex justify-center items-center w-full h-screen ">
@@ -83,14 +87,16 @@ const DesktopScreen = ({ children }) => {
         ) : (
           /* Main Desktop Content */
           <div className="flex flex-col flex-wrap py-5 pl-4 gap-4 max-h-full w-16 ">
-            {items.map((item) => (
+            {items.map((item,index) => (
               <div
                 key={item.name}
                 className="w-16 flex flex-col items-center group cursor-pointer relative"
                 onClick={() => setActiveItem(item)} 
               >
-                <div className="w-12 h-12   rounded-lg mb-1 flex justify-center items-center p-1">
-                <img src={item.icon} alt={item.name} className="w-full h-full object-cover" />
+                <div className="w-12 h-12   rounded-lg mb-1 flex justify-center items-center p-1 ">
+                <div className={`absolute w-full h-full rounded-full blur-[12px] opacity-50 bg-fuchsia-800`}
+      ></div>
+                <img src={item.icon} alt={item.name} className="w-full h-full object-cover drop-shadow-[0_0_15px_rgba(255,0,0,0.9)]" />
                 </div>
                 <span className="text-xs text-white text-center truncate w-full">
                   {item.name}
@@ -119,7 +125,25 @@ const DesktopScreen = ({ children }) => {
                 </div>
               </div>
             ))}
-
+{projects.map((item,index) => (
+              <div
+                key={item.name}
+                className="w-16 flex flex-col items-center group cursor-pointer relative"
+                onClick={() => window.open(item.to, '_blank')} 
+              >
+                <div className="w-12 h-12   rounded-lg mb-1 flex justify-center items-center p-1">
+                <div className={`absolute w-full h-full rounded-full blur-[12px] opacity-40 bg-blue-400`}
+      ></div>
+                <img src={item.icon} alt={item.name} className="w-full h-full object-cover drop-shadow-[0_0_20px_rgba(255,255,255,0.9)]" />
+                </div>
+                <span className="text-xs text-white text-center truncate w-full underline">
+                  {item.name}
+                </span>
+                <div className="absolute top-0 left-0 w-full text-white text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                  {item.name}
+                </div>
+              </div>
+            ))}
 
 
           </div>
