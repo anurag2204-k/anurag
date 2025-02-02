@@ -25,12 +25,31 @@ import discord from '/discord.png'
 const DesktopScreen = ({ children }) => {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [isStartMenuOpen, setIsStartMenuOpen] = useState(false);
-  const [activeItem, setActiveItem] = useState(null); // Track the active item
+  const [activeItem, setActiveItem] = useState(null); 
 
   useEffect(() => {
     const timer = setInterval(() => setCurrentTime(new Date()), 1000);
     return () => clearInterval(timer);
   }, []);
+
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest(".menu-container")) {
+        setIsStartMenuOpen(false);
+      }
+    };
+
+    if (isStartMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isStartMenuOpen]);
 
   const items = [
     // { name: 'Iphone', icon: <Folder />, content: <IPhoneScreen /> },
@@ -153,12 +172,14 @@ const DesktopScreen = ({ children }) => {
         <div className="absolute bottom-0 left-0 right-0 h-10  flex items-center px-2" style={{
     background: 'linear-gradient(to right, #491220, #1c2425, #491220)',
   }}>
+          <div className="menu-container relative">
           <button
             onClick={() => setIsStartMenuOpen(!isStartMenuOpen)}
-            className="px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+            className="px-4 py-1 bg-black text-white rounded hover:bg-zinc-800 transition-colors"
           >
-            <Menu className="w-5 h-5" />
+            <Menu className="w-5 h-5 " />
           </button>
+          </div>
           <div className="flex-grow"></div>
           <div className="flex items-center space-x-4 text-white">
             <ChevronUp className="w-4 h-4" />
@@ -173,15 +194,18 @@ const DesktopScreen = ({ children }) => {
 
         {/* Start Menu */}
         {isStartMenuOpen && (
-          <div className="absolute bottom-10 left-0 w-64 bg-gray-800 text-white p-4 rounded-tr-lg">
+          <div className="absolute bottom-10 left-0 w-64 bg-gray-950 text-white  rounded-tr-lg border border-b-0 border-l-0">
+            <div className='p-4 '>
             <h2 className="text-xl font-bold mb-4">Start Menu</h2>
+            <hr class="h-px my-2 bg-gray-200 border-0 dark:bg-gray-700"></hr>
             <ul className="space-y-2">
-              <li className="hover:bg-blue-500 p-2 rounded cursor-pointer">Programs</li>
-              <li className="hover:bg-blue-500 p-2 rounded cursor-pointer">Documents</li>
+              <li className="hover:bg-zinc-700 p-2 rounded cursor-pointer">Will be coming soon</li>
+              {/* <li className="hover:bg-blue-500 p-2 rounded cursor-pointer">Documents</li>
               <li className="hover:bg-blue-500 p-2 rounded cursor-pointer">Settings</li>
               <li className="hover:bg-blue-500 p-2 rounded cursor-pointer">Search</li>
-              <li className="hover:bg-blue-500 p-2 rounded cursor-pointer">Help</li>
+              <li className="hover:bg-blue-500 p-2 rounded cursor-pointer">Help</li> */}
             </ul>
+            </div>
           </div>
         )}
       </div>
