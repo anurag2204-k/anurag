@@ -18,6 +18,7 @@ import moviegig from '/film-roll.png'
 import instagram from '/instagram.png'
 import leetcode from '/leetcode.png'
 import discord from '/discord.png'
+import resume from '/resume.png'
 
 const IPhoneScreen = ({ children }) => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -43,6 +44,7 @@ const IPhoneScreen = ({ children }) => {
     { name: 'Telegram', icon: telegram, to:"https://t.me/Anuragkho"},
     { name: 'Twitter', icon: twitter, to:"https://x.com/anurag_k04"},
     { name: 'Whatsapp', icon: whatsapp, to:"https://wa.me/qr/LZDEC72CM5KXP1"},
+    { name: 'Resume', icon: resume, to:"https://drive.google.com/file/d/14vMYC0liiYq8VF2-cPNtu_asITW03AeH/view?usp=sharing"},
     ]
   const projects = [
     { name: 'MovieGig', icon: moviegig, to:"https://moviegig.onrender.com/"},
