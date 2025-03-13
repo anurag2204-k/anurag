@@ -52,7 +52,7 @@ const CategorySection = ({ category , darkMode}) => (
 );
 
 const SkillsPage = () => {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
