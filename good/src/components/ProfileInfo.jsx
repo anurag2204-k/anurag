@@ -17,6 +17,7 @@ const ProfileInfo = () => {
     // ["Resume", "bt22csd014@iiitn.ac.in"],
     ["MovieGig", <a href="https://moviegig.onrender.com/">https://moviegig.onrender.com/</a>],
     ["NewzSage", <a href="https://newz-sage.vercel.app">https://newz-sage.vercel.app</a>],
+    ["Discord Clone", <a href="https://discordd-vert.vercel.app">https://discordd-vert.vercel.app</a>],
   ];
 
   return (
