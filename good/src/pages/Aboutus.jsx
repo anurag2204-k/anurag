@@ -32,20 +32,17 @@ const AboutUs = () => {
 
         {/* Description */}
         <p className="text-sm sm:text-base md:text-lg text-gray-700 mb-4">
-          With a flair for solving real-world problems through innovative software solutions. 
-          Currently pursuing my Bachelor's in Computer Science and Engineering at the Indian 
-          Institute of Information Technology, Nagpur, I am driven by a deep curiosity for 
-          data science, artificial intelligence, and building scalable applications.
+        Full-Stack Developer from Nagpur, India, passionate about crafting scalable, high-performance web applications that push boundaries. With a toolkit packed with Node.js, React.js, TypeScript, and Next.js—plus a knack for RESTful APIs and real-time systems—I thrive at the intersection of sleek frontends and robust backends.
         </p>
         <p className="text-sm sm:text-base md:text-lg text-gray-700 mb-4">
           With a strong foundation in data structures, algorithms, and full-stack development, 
           I enjoy creating impactful projects using cutting-edge technologies. My experience 
           ranges from leading collaborative teams on software projects to tackling complex 
-          challenges in the realms of data analytics and machine learning.
+          challenges in the realms of development, computer vision and machine learning.
         </p>
 
         {/* Values Section */}
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-800 mt-8">
+        {/* <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-800 mt-8">
           My Values
         </h2>
         <ul className="list-disc pl-6 mt-4 text-sm sm:text-base md:text-lg text-gray-700 space-y-2">
@@ -61,7 +58,7 @@ const AboutUs = () => {
             <FaUsers className="text-purple-500 mr-2 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
             <span>Collaboration: I thrive in team environments, working closely with clients and colleagues to achieve common goals.</span>
           </li>
-        </ul>
+        </ul> */}
 
         {/* Profile Info */}
         <ProfileInfo />
