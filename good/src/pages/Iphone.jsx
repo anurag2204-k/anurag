@@ -49,7 +49,7 @@ const IPhoneScreen = ({ children }) => {
   const projects = [
     { name: 'MovieGig', icon: moviegig, to:"https://moviegig.onrender.com/"},
     { name: 'NewzSage', icon: news, to:"https://newz-sage.vercel.app/"},
-    { name: 'Discord-clone', icon: discord, to:"https://discordd-vert.vercel.app/"},
+    { name: 'Discord-clone', icon: discord, to:"https://github.com/anurag2204-k/discordd"},
   ]
 
   return (
