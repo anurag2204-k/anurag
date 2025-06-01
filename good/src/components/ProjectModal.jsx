@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { XIcon } from 'lucide-react';
+import { XIcon, Github, ExternalLink } from 'lucide-react';
 
 const ProjectModal = ({ project, onClose }) => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -76,17 +76,31 @@ const ProjectModal = ({ project, onClose }) => {
             </div>
           </div>
 
-          {/* Live Project Link */}
-          {project.liveUrl && (
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm md:text-base"
-            >
-              View Live Project
-            </a>
-          )}
+          {/* Project Links */}
+          <div className="flex flex-wrap gap-4">
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors text-sm md:text-base"
+              >
+                <ExternalLink className="w-4 h-4" />
+                View Live Project
+              </a>
+            )}
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-gray-800 text-white px-6 py-2 rounded-lg hover:bg-gray-900 transition-colors text-sm md:text-base"
+              >
+                <Github className="w-4 h-4" />
+                View Source Code
+              </a>
+            )}
+          </div>
         </div>
       </div>
 
