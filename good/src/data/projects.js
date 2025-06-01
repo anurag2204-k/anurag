@@ -40,7 +40,7 @@ export const projects = [
     "Detailed throughput and efficiency metrics",
     "Extensible for distributed system implementation"
   ],
-  githubUrl: "https://github.com/yourusername/AnomSched"
+  githubUrl: "https://github.com/anurag2204-k/AnomSched"
 },
   {
     id: "newzsage",
@@ -117,7 +117,7 @@ export const projects = [
       "Secure file uploads via Cloudinary integration",
     ],
     liveUrl: "https://placement-iiitn.vercel.app/",
-    githubUrl: "https://github.com/anurag2204-k/placement-portal",
+    githubUrl: "https://github.com/prashantsaxe/placement_iiitn_",
   },
   {
     id: "moviegig",
