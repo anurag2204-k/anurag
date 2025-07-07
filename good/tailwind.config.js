@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  
+
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -13,7 +13,7 @@ export default {
           pink: '#ff00ff',
           yellow: '#ffff00',
           green: '#00ff00',
-          
+
         },
         "blue-500": "#1e40af",
         "blue-400": "#3b82f6",
@@ -27,7 +27,7 @@ export default {
       },
     },
   },
+  darkMode: 'class',
   plugins: [],
 }
 
- 

@@ -15,8 +15,16 @@ export default function HereWeGo() {
     }, []);
 
     return (
-        <div>
-            {isDesktop ? <DesktopScreen /> : <IPhoneScreen />}
+        <div className="min-h-screen">
+            {isDesktop ? (
+                <DesktopScreen />
+            ) : (
+                <div className="min-h-screen flex items-center justify-center p-4">
+                    <div className="w-full max-w-sm aspect-[9/18] max-h-[90vh]">
+                        <IPhoneScreen />
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

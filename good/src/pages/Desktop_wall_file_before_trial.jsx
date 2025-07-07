@@ -64,7 +64,7 @@ const DesktopScreen = ({ children }) => {
 
 
         {/* Main Content Area
-        <div className="absolute top-0 left-0 right-0 bottom-10 overflow-auto p-4">
+        <div className="absolute top-0 left-0 right-0 bottom-10 overflow-auto no-scrollbar p-4">
           {children}
         </div> */}
 

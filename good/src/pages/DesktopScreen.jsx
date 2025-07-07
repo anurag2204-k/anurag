@@ -90,7 +90,7 @@ const DesktopScreen = ({ children }) => {
       >
         {/* Conditionally Render Active Item Content */}
         {activeItem ? (
-          <div className="absolute top-0 left-0 right-0 bottom-10 bg-gray-800 text-white overflow-y-auto ">
+          <div className="absolute top-0 left-0 right-0 bottom-10 bg-gray-800 text-white overflow-y-auto no-scrollbar ">
             {/* Title Bar */}
             <div className="sticky top-0 z-50 bg-gradient-to-b from-black via-gray-600 to-gray-100 p-2 text-white flex items-center justify-between ">
               <span className="font-bold">{activeItem.name}</span>

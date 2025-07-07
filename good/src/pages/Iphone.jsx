@@ -3,7 +3,7 @@ import React from 'react'
 import { Battery, Signal, Wifi } from 'lucide-react'
 import walImage from '../assets/ag.jpg';
 import AboutUs from './Aboutus';
-import SkillsPage from './SkillsPage';
+import MobileSkillsPage from './MobileSkillsPage';
 import ProjectsPage from '../components/ProjectsPage';
 import app from '/app.png';
 import brain from '/brain.png';
@@ -31,10 +31,10 @@ const IPhoneScreen = ({ children }) => {
   const items = [
     // { name: 'Iphone', icon: <Folder />, content: <IPhoneScreen /> },
     // { name: 'Mac book desktop', icon: <Trash />, content: <MacBookDesktop /> },
-    { name: 'About me', icon: me, content: <AboutUs /> },
+    { name: 'About me', icon: me, content: <AboutUs isIPhoneContext={true} /> },
     // { name: 'Timid', icon: brain, content: <Timid /> },
-    { name: 'Skills', icon: brain, content: <SkillsPage /> },
-    { name: 'Projects', icon: app, content: <ProjectsPage /> }
+    { name: 'Skills', icon: brain, content: <MobileSkillsPage /> },
+    { name: 'Projects', icon: app, content: <ProjectsPage isIPhoneContext={true} /> }
   ];
   const linked = [
     { name: 'Github', icon: github, to:"https://github.com/anurag2204-k"},
@@ -80,10 +80,10 @@ const IPhoneScreen = ({ children }) => {
           </div>
 
           {/* Content Area */}
-          <div className="p-4 h-[calc(100%-2rem)] max-h-full overflow-y-auto">
+          <div className="p-4 h-[calc(100%-2rem)] max-h-full overflow-y-auto no-scrollbar">
   <div className="flex items-center justify-center h-full text-gray-400">
     {activeItem ? (
-      <div className="absolute top-[30px] left-0 right-0 bottom-0 bg-gray-800 text-white overflow-y-auto">
+      <div className="absolute top-[30px] left-0 right-0 bottom-0 bg-gray-800 text-white overflow-y-auto no-scrollbar">
         {/* Title Bar */}
         <div className="sticky top-0 z-50 bg-gray-950  p-2 text-white flex items-center justify-between">
           <span className="font-bold">{activeItem.name}</span>
