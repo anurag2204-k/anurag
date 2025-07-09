@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MessageCircle, Send, Github, Linkedin, Twitter, MapPin, Phone, CheckCircle, AlertCircle } from 'lucide-react';
-import emailjs from '@emailjs/browser';
+import { Mail, MessageCircle, Send, Github, Linkedin, Twitter, MapPin, Phone } from 'lucide-react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,39 +9,12 @@ const Contact = () => {
     subject: '',
     message: ''
   });
-  const [isLoading, setIsLoading] = useState(false);
-  const [status, setStatus] = useState('');
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setIsLoading(true);
-    setStatus('');
-
-    try {
-      // Initialize EmailJS with your public key
-      emailjs.init("vNf56nN-TmR8puxj0"); // Replace with your actual public key
-      
-      const result = await emailjs.send(
-        'service_bnqqacl',    // Replace with your service ID
-        'template_ssqfzqe',   // Replace with your template ID
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          to_email: 'anuragk2204@gmail.com' // Your email
-        }
-      );
-
-      console.log('Email sent successfully:', result);
-      setStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    } catch (error) {
-      console.error('Email failed:', error);
-      setStatus('error');
-    } finally {
-      setIsLoading(false);
-    }
+    // Handle form submission here
+    console.log('Form submitted:', formData);
+    // You can integrate with email service or API here
   };
 
   const handleChange = (e) => {
@@ -84,30 +56,6 @@ const Contact = () => {
             className="bg-white/80 dark:bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl"
           >
             <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-6">Send me a message</h3>
-            
-            {/* Status Messages */}
-            {status === 'success' && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="p-4 bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 rounded-lg mb-6 flex items-center gap-2"
-              >
-                <CheckCircle className="w-5 h-5" />
-                <span>Message sent successfully! I'll get back to you soon.</span>
-              </motion.div>
-            )}
-            
-            {status === 'error' && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="p-4 bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 rounded-lg mb-6 flex items-center gap-2"
-              >
-                <AlertCircle className="w-5 h-5" />
-                <span>Failed to send message. Please try again or email me directly at anuragk2204@gmail.com</span>
-              </motion.div>
-            )}
-
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
@@ -169,26 +117,12 @@ const Contact = () => {
               </div>
               <motion.button
                 type="submit"
-                disabled={isLoading}
-                whileHover={{ scale: isLoading ? 1 : 1.05 }}
-                whileTap={{ scale: isLoading ? 1 : 0.95 }}
-                className={`w-full flex items-center justify-center gap-2 px-8 py-3 font-semibold rounded-lg shadow-lg transition-all duration-300 ${
-                  isLoading 
-                    ? 'bg-gray-400 cursor-not-allowed' 
-                    : 'bg-gradient-to-r from-blue-600 to-purple-600 hover:shadow-xl'
-                } text-white`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="w-full flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                {isLoading ? (
-                  <>
-                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    <Send className="w-5 h-5" />
-                    Send Message
-                  </>
-                )}
+                <Send className="w-5 h-5" />
+                Send Message
               </motion.button>
             </form>
           </motion.div>
@@ -211,7 +145,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium text-slate-800 dark:text-white">Email</p>
-                    <p className="text-slate-600 dark:text-slate-300">anuragk2204@gmail.com</p>
+                    <p className="text-slate-600 dark:text-slate-300">anurag@example.com</p>
                   </div>
                 </div>
 
@@ -221,7 +155,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium text-slate-800 dark:text-white">Phone</p>
-                    <p className="text-slate-600 dark:text-slate-300">+91 8625971496</p>
+                    <p className="text-slate-600 dark:text-slate-300">+1 (555) 123-4567</p>
                   </div>
                 </div>
 
@@ -252,7 +186,7 @@ const Contact = () => {
                   <Github className="w-6 h-6" />
                 </motion.a>
                 <motion.a
-                  href="https://www.linkedin.com/in/anuragk22/"
+                  href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}
@@ -262,7 +196,7 @@ const Contact = () => {
                   <Linkedin className="w-6 h-6" />
                 </motion.a>
                 <motion.a
-                  href="https://x.com/anurag_k04"
+                  href="https://twitter.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.1, y: -2 }}

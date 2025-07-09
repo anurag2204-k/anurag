@@ -21,7 +21,7 @@ function App() {
     <Routes>
       <Route path="/" element={<LandingPage theme={theme} toggleTheme={toggleTheme} />} />
       <Route path="/iphone-demo" element={
-        <div className="h-screen w-full flex justify-center items-center bg-gray-300 dark:bg-gray-800 p-4 no-scrollbar">
+        <div className="h-screen w-full flex justify-center items-center bg-gray-300 dark:bg-gray-800 p-4">
           <HereWeGo />
         </div>
       } />

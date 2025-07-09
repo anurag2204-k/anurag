@@ -110,7 +110,7 @@ const Header = ({ theme, toggleTheme }) => {
             {/* Action Buttons */}
             <div className="flex items-center space-x-4">
               {/* Resume Button */}
-              {/* <motion.a
+              <motion.a
                 href="/resume.pdf"
                 download="Anurag_Resume.pdf"
                 className={`flex items-center gap-2 px-4 py-2 border rounded-full transition-all duration-300 ${
@@ -126,7 +126,7 @@ const Header = ({ theme, toggleTheme }) => {
               >
                 <Download className="w-4 h-4" />
                 <span className="text-sm font-medium">Resume</span>
-              </motion.a> */}
+              </motion.a>
 
               {/* Theme Toggle */}
               <motion.button
@@ -142,7 +142,12 @@ const Header = ({ theme, toggleTheme }) => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.8, duration: 0.5 }}
               >
-                {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                <motion.div
+                  animate={{ rotate: theme === 'dark' ? 0 : 180 }}
+                  transition={{ duration: 0.5, ease: 'easeInOut' }}
+                >
+                  {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+                </motion.div>
               </motion.button>
 
               {/* iPhone Demo Button */}

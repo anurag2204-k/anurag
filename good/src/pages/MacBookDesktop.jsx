@@ -43,7 +43,7 @@ const MacBookDesktop= ({ children }) => {
         </div>
 
         {/* Main Content Area */}
-        <div className="absolute top-6 left-0 right-0 bottom-16 overflow-auto no-scrollbar p-4">
+        <div className="absolute top-6 left-0 right-0 bottom-16 overflow-auto p-4">
           {children || (
             <div className="flex items-center justify-center h-full text-white text-xl">
               Your desktop content here
