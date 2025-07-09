@@ -110,7 +110,7 @@ const Header = ({ theme, toggleTheme }) => {
             {/* Action Buttons */}
             <div className="flex items-center space-x-4">
               {/* Resume Button */}
-              <motion.a
+              {/* <motion.a
                 href="/resume.pdf"
                 download="Anurag_Resume.pdf"
                 className={`flex items-center gap-2 px-4 py-2 border rounded-full transition-all duration-300 ${
@@ -126,7 +126,7 @@ const Header = ({ theme, toggleTheme }) => {
               >
                 <Download className="w-4 h-4" />
                 <span className="text-sm font-medium">Resume</span>
-              </motion.a>
+              </motion.a> */}
 
               {/* Theme Toggle */}
               <motion.button

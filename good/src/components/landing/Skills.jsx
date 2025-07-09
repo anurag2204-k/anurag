@@ -17,14 +17,14 @@ const skillCategories = [
     icon: Palette,
     color: "from-blue-500 to-cyan-500",
     skills: [
-      { name: "React.js", icon: "⚛️", color: "bg-blue-500" },
-      { name: "TypeScript", icon: "🔷", color: "bg-blue-600" },
-      { name: "Next.js", icon: "▲", color: "bg-slate-700" },
-      { name: "Tailwind CSS", icon: "🎨", color: "bg-cyan-500" },
-      { name: "Framer Motion", icon: "🎭", color: "bg-purple-500" },
-      { name: "Vue.js", icon: "💚", color: "bg-green-500" },
-      { name: "HTML5", icon: "🌐", color: "bg-orange-600" },
-      { name: "CSS3", icon: "🖌️", color: "bg-blue-500" }
+      { name: "React.js", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", color: "bg-blue-500" },
+      { name: "TypeScript", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", color: "bg-blue-600" },
+      { name: "Next.js", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg", color: "bg-slate-700" },
+      { name: "Tailwind CSS", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/tailwindcss/tailwindcss-original.svg", color: "bg-cyan-500" },
+      { name: "Shadcn/UI", iconUrl: "https://ui.shadcn.com/favicon.ico", color: "bg-purple-500" },
+      { name: "Vue.js", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg", color: "bg-green-500" },
+      { name: "HTML5", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", color: "bg-orange-600" },
+      { name: "CSS3", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", color: "bg-blue-500" }
     ]
   },
   {
@@ -32,14 +32,14 @@ const skillCategories = [
     icon: Database,
     color: "from-green-500 to-emerald-500",
     skills: [
-      { name: "Node.js", icon: "🟢", color: "bg-green-600" },
-      { name: "Express.js", icon: "🚀", color: "bg-gray-700" },
-      { name: "MongoDB", icon: "🍃", color: "bg-green-500" },
-      { name: "PostgreSQL", icon: "🐘", color: "bg-blue-700" },
-      { name: "Prisma", icon: "🔺", color: "bg-indigo-600" },
-      { name: "GraphQL", icon: "🔗", color: "bg-pink-500" },
-      { name: "REST APIs", icon: "🔌", color: "bg-orange-500" },
-      { name: "Firebase", icon: "🔥", color: "bg-yellow-600" }
+      { name: "Node.js", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", color: "bg-green-600" },
+      { name: "Express.js", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg", color: "bg-gray-700" },
+      { name: "MongoDB", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", color: "bg-green-500" },
+      { name: "PostgreSQL", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg", color: "bg-blue-700" },
+      { name: "Prisma", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg", color: "bg-indigo-600" },
+      { name: "GraphQL", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg", color: "bg-pink-500" },
+      { name: "REST APIs", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openapi/openapi-original.svg", color: "bg-orange-500" },
+      { name: "Firebase", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg", color: "bg-yellow-600" }
     ]
   },
   {
@@ -47,14 +47,14 @@ const skillCategories = [
     icon: Code,
     color: "from-purple-500 to-pink-500",
     skills: [
-      { name: "JavaScript", icon: "🟨", color: "bg-yellow-500" },
-      { name: "Python", icon: "🐍", color: "bg-blue-600" },
-      { name: "Java", icon: "☕", color: "bg-red-600" },
-      { name: "C++", icon: "⚡", color: "bg-blue-700" },
-      { name: "SQL", icon: "📊", color: "bg-orange-500" },
-      { name: "TypeScript", icon: "🔷", color: "bg-blue-600" },
-      { name: "Go", icon: "🔵", color: "bg-cyan-600" },
-      { name: "PHP", icon: "🔧", color: "bg-purple-600" }
+      { name: "JavaScript", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", color: "bg-yellow-500" },
+      { name: "Python", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg", color: "bg-blue-600" },
+      { name: "Java", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg", color: "bg-red-600" },
+      { name: "C++", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg", color: "bg-blue-700" },
+      { name: "SQL", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg", color: "bg-orange-500" },
+      { name: "TypeScript", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", color: "bg-blue-600" },
+      { name: "Go", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg", color: "bg-cyan-600" },
+      { name: "PHP", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg", color: "bg-purple-600" }
     ]
   },
   {
@@ -62,14 +62,14 @@ const skillCategories = [
     icon: Server,
     color: "from-orange-500 to-red-500",
     skills: [
-      { name: "Git", icon: "🌿", color: "bg-orange-600" },
-      { name: "Docker", icon: "🐳", color: "bg-blue-600" },
-      { name: "AWS", icon: "☁️", color: "bg-yellow-600" },
-      { name: "Vercel", icon: "▲", color: "bg-black" },
-      { name: "Netlify", icon: "🌐", color: "bg-teal-500" },
-      { name: "VS Code", icon: "💻", color: "bg-blue-600" },
-      { name: "Figma", icon: "🎨", color: "bg-purple-600" },
-      { name: "Postman", icon: "📮", color: "bg-orange-500" }
+      { name: "Git", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", color: "bg-orange-600" },
+      { name: "Docker", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg", color: "bg-blue-600" },
+      { name: "AWS", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg", color: "bg-yellow-600" },
+      { name: "Vercel", iconUrl: "https://assets.vercel.com/image/upload/front/favicon/vercel/57x57.png", color: "bg-black" },
+      { name: "Netlify", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg", color: "bg-teal-500" },
+      { name: "VS Code", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg", color: "bg-blue-600" },
+      { name: "Figma", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", color: "bg-purple-600" },
+      { name: "Postman", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg", color: "bg-orange-500" }
     ]
   }
 ];
@@ -158,8 +158,20 @@ const Skills = () => {
               <div className="relative bg-gradient-to-br from-white to-slate-50 dark:from-slate-700 dark:to-slate-800 p-6 rounded-2xl border border-slate-200/50 dark:border-slate-600/50 hover:shadow-xl transition-all duration-300">
                 {/* Tech Icon */}
                 <div className="text-center">
-                  <div className="text-4xl mb-3 transform group-hover:scale-110 transition-transform duration-300">
-                    {skill.icon}
+                  <div className="mb-3 flex justify-center">
+                    <img 
+                      src={skill.iconUrl} 
+                      alt={skill.name}
+                      className="w-12 h-12 object-contain transform group-hover:scale-110 transition-transform duration-300"
+                      onError={(e) => {
+                        // Fallback to a generic code icon if image fails to load
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'flex';
+                      }}
+                    />
+                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg items-center justify-center text-white font-bold text-lg hidden">
+                      {skill.name.charAt(0)}
+                    </div>
                   </div>
                   <h3 className="font-semibold text-slate-800 dark:text-white text-sm group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
                     {skill.name}

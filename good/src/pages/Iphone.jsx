@@ -80,10 +80,10 @@ const IPhoneScreen = ({ children }) => {
           </div>
 
           {/* Content Area */}
-          <div className="p-4 h-[calc(100%-2rem)] max-h-full overflow-y-auto">
+          <div className="p-4 h-[calc(100%-2rem)] max-h-full overflow-y-auto no-scrollbar">
   <div className="flex items-center justify-center h-full text-gray-400">
     {activeItem ? (
-      <div className="absolute top-[30px] left-0 right-0 bottom-0 bg-gray-800 text-white overflow-y-auto">
+      <div className="absolute top-[30px] left-0 right-0 bottom-0 bg-gray-800 text-white overflow-y-auto no-scrollbar">
         {/* Title Bar */}
         <div className="sticky top-0 z-50 bg-gray-950  p-2 text-white flex items-center justify-between">
           <span className="font-bold">{activeItem.name}</span>

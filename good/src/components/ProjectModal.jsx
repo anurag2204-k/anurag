@@ -22,7 +22,7 @@ const ProjectModal = ({ project, onClose }) => {
         </div>
 
         {/* Content */}
-        <div className="flex-1 overflow-y-auto p-6">
+        <div className="flex-1 overflow-y-auto p-6 no-scrollbar">
           <p className="text-gray-600 mb-6 text-sm md:text-base">{project.description}</p>
 
           {/* Technologies */}

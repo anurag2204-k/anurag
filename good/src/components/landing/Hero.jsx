@@ -116,7 +116,7 @@ const Hero = () => {
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </motion.a>
             
-            <motion.a
+            {/* <motion.a
               href="#showcase"
               className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-indigo-600 to-cyan-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 group"
               whileHover={{ scale: 1.05 }}
@@ -125,7 +125,7 @@ const Hero = () => {
               <Monitor className="w-5 h-5" />
               Live Showcase
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </motion.a>
+            </motion.a> */}
             
             <motion.a
               href="/resume.pdf"
