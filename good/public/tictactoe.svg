@@ -1,0 +1,29 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Grid lines -->
+  <defs>
+    <style>
+      .grid-line { stroke: #4F46E5; stroke-width: 3; stroke-linecap: round; }
+      .x-mark { stroke: #EF4444; stroke-width: 4; stroke-linecap: round; fill: none; }
+      .o-mark { stroke: #3B82F6; stroke-width: 4; stroke-linecap: round; fill: none; }
+    </style>
+  </defs>
+  
+  <!-- Vertical lines -->
+  <line x1="21" y1="8" x2="21" y2="56" class="grid-line"/>
+  <line x1="43" y1="8" x2="43" y2="56" class="grid-line"/>
+  
+  <!-- Horizontal lines -->
+  <line x1="8" y1="21" x2="56" y2="21" class="grid-line"/>
+  <line x1="8" y1="43" x2="56" y2="43" class="grid-line"/>
+  
+  <!-- X mark in top-left -->
+  <line x1="10" y1="10" x2="19" y2="19" class="x-mark"/>
+  <line x1="19" y1="10" x2="10" y2="19" class="x-mark"/>
+  
+  <!-- O mark in center -->
+  <circle cx="32" cy="32" r="7" class="o-mark"/>
+  
+  <!-- X mark in bottom-right -->
+  <line x1="45" y1="45" x2="54" y2="54" class="x-mark"/>
+  <line x1="54" y1="45" x2="45" y2="54" class="x-mark"/>
+</svg>

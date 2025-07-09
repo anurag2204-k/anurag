@@ -22,8 +22,11 @@ import instagram from '/instagram.png'
 import leetcode from '/leetcode.png'
 import discord from '/discord.png'
 import resume from '/resume.png'
+import tictactoe from '/tictactoe.svg'
 
-const DesktopScreen = ({ children }) => {
+import TicTacToe from './TicTacToe ';
+
+const DesktopScreen = ({ children, theme = 'dark' }) => {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [isStartMenuOpen, setIsStartMenuOpen] = useState(false);
   const [activeItem, setActiveItem] = useState(null); 
@@ -58,7 +61,8 @@ const DesktopScreen = ({ children }) => {
     { name: 'About me', icon: me, content: <AboutUs /> },
     // { name: 'Timid', icon: brain, content: <Timid /> },
     { name: 'Skills', icon: brain, content: <SkillsPage /> },
-    { name: 'Projects', icon: app, content: <ProjectsPage /> }
+    { name: 'Projects', icon: app, content: <ProjectsPage /> },
+    { name: 'Tic Tac Toe', icon: tictactoe, content: <TicTacToe theme={theme} /> }
   ];
   const linked = [
     { name: 'Github', icon: github, to:"https://github.com/anurag2204-k"},

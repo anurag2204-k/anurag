@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import DesktopScreen from "./DesktopScreen";
 import IPhoneScreen from "./Iphone";
 
-export default function HereWeGo() {
+export default function HereWeGo({ theme = 'dark' }) {
     const [isDesktop, setIsDesktop] = useState(window.innerWidth > 768);
 
     useEffect(() => {
@@ -17,11 +17,11 @@ export default function HereWeGo() {
     return (
         <div className="min-h-screen">
             {isDesktop ? (
-                <DesktopScreen />
+                <DesktopScreen theme={theme} />
             ) : (
                 <div className="min-h-screen flex items-center justify-center p-4">
                     <div className="w-full max-w-sm aspect-[9/18] max-h-[90vh]">
-                        <IPhoneScreen />
+                        <IPhoneScreen theme={theme} />
                     </div>
                 </div>
             )}

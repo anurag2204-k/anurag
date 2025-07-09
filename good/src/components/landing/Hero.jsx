@@ -28,7 +28,7 @@ const floatingVariants = {
   }
 };
 
-const Hero = () => {
+const Hero = ({ theme = 'dark' }) => {
   return (
     <section className="min-h-screen flex items-center justify-center py-20 px-6 relative">
       {/* Background decorative elements */}
@@ -58,7 +58,7 @@ const Hero = () => {
           {/* Left Side - iPhone Component */}
           <div className="hidden lg:flex order-2 lg:order-1 justify-center lg:justify-start">
             <div className="relative w-full max-w-sm h-[600px] lg:h-[650px] xl:h-[700px]">
-              <IPhoneScreen />
+              <IPhoneScreen theme={theme} />
             </div>
           </div>
 

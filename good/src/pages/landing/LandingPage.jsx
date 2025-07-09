@@ -14,7 +14,7 @@ const LandingPage = ({ theme, toggleTheme }) => {
       <FloatingElements />
       <Header theme={theme} toggleTheme={toggleTheme} />
       <main>
-        <Hero />
+        <Hero theme={theme} />
         <About />
         <Skills />
         <FeaturedProjects />

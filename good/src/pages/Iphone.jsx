@@ -5,6 +5,7 @@ import walImage from '../assets/ag.jpg';
 import AboutUs from './Aboutus';
 import MobileSkillsPage from './MobileSkillsPage';
 import ProjectsPage from '../components/ProjectsPage';
+import TicTacToe from './TicTacToe ';
 import app from '/app.png';
 import brain from '/brain.png';
 import github from '/github.png';
@@ -19,8 +20,9 @@ import instagram from '/instagram.png'
 import leetcode from '/leetcode.png'
 import discord from '/discord.png'
 import resume from '/resume.png'
+import tictactoe from '/tictactoe.svg'
 
-const IPhoneScreen = ({ children }) => {
+const IPhoneScreen = ({ children, theme = 'dark' }) => {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [activeItem, setActiveItem] = useState(null); 
   useEffect(() => {
@@ -34,7 +36,8 @@ const IPhoneScreen = ({ children }) => {
     { name: 'About me', icon: me, content: <AboutUs isIPhoneContext={true} /> },
     // { name: 'Timid', icon: brain, content: <Timid /> },
     { name: 'Skills', icon: brain, content: <MobileSkillsPage /> },
-    { name: 'Projects', icon: app, content: <ProjectsPage isIPhoneContext={true} /> }
+    { name: 'Projects', icon: app, content: <ProjectsPage isIPhoneContext={true} /> },
+    { name: 'Tic Tac Toe', icon: tictactoe, content: <TicTacToe theme={theme} /> }
   ];
   const linked = [
     { name: 'Github', icon: github, to:"https://github.com/anurag2204-k"},
@@ -107,15 +110,24 @@ const IPhoneScreen = ({ children }) => {
             className="flex flex-col items-center group cursor-pointer relative w-12 "
             onClick={() => setActiveItem(item)} 
           >
-            <div className="w-12 h-12 rounded-lg mb-1 flex justify-center items-center p-1">
-            <div className={`absolute w-full h-full rounded-full blur-[12px] opacity-30 bg-fuchsia-800`}
-      ></div>
-              <img src={item.icon} alt={item.name} className="w-full h-full object-cover drop-shadow-[0_0_15px_rgba(255,0,0,0.9)]" />
+            <div className="w-12 h-12 rounded-lg mb-1 flex justify-center items-center p-1 relative">
+              <div className={`absolute w-full h-full rounded-full blur-[8px] opacity-20 ${
+                theme === 'dark' ? 'bg-blue-500' : 'bg-blue-400'
+              }`}></div>
+              <img src={item.icon} alt={item.name} className={`w-full h-full object-cover ${
+                theme === 'dark' 
+                  ? 'drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]' 
+                  : 'drop-shadow-[0_0_8px_rgba(59,130,246,0.3)]'
+              }`} />
             </div>
-            <span className="text-xs  text-white text-center truncate w-full">
+            <span className={`text-xs text-center truncate w-full ${
+              theme === 'dark' ? 'text-white' : 'text-gray-800'
+            }`}>
               {item.name}
             </span>
-            <div className="absolute top-0 left-0 w-full text-white text-xs  px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+            <div className={`absolute top-0 left-0 w-full text-xs px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10 ${
+              theme === 'dark' ? 'text-white' : 'text-gray-800'
+            }`}>
               {item.name}
             </div>
           </div>
@@ -144,10 +156,15 @@ const IPhoneScreen = ({ children }) => {
             className="flex flex-col items-center group cursor-pointer relative w-12"
             onClick={() => window.open(item.to, '_blank')} 
           >
-            <div className="w-12 h-12 rounded-lg mb-1 flex justify-center items-center p-1">
-            <div className={`absolute w-full h-full rounded-full blur-[12px] opacity-40 bg-blue-400`}
-      ></div>
-              <img src={item.icon} alt={item.name} className="w-full h-full object-cover drop-shadow-[0_0_20px_rgba(255,255,255,0.9)]" />
+            <div className="w-12 h-12 rounded-lg mb-1 flex justify-center items-center p-1 relative">
+              <div className={`absolute w-full h-full rounded-full blur-[8px] opacity-15 ${
+                theme === 'dark' ? 'bg-cyan-400' : 'bg-cyan-500'
+              }`}></div>
+              <img src={item.icon} alt={item.name} className={`w-full h-full object-cover ${
+                theme === 'dark' 
+                  ? 'drop-shadow-[0_0_8px_rgba(34,211,238,0.4)]' 
+                  : 'drop-shadow-[0_0_8px_rgba(34,211,238,0.3)]'
+              }`} />
             </div>
             <span className="text-xs  text-white text-center truncate w-full">
               {item.name}
