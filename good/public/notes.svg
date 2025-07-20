@@ -1,0 +1,34 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .notebook { fill: #3B82F6; stroke: #1E40AF; stroke-width: 2; }
+      .lines { stroke: #93C5FD; stroke-width: 1.5; stroke-linecap: round; }
+      .spiral { fill: none; stroke: #1E40AF; stroke-width: 2; }
+      .pen { fill: #EF4444; stroke: #DC2626; stroke-width: 1; }
+    </style>
+  </defs>
+  
+  <!-- Notebook body -->
+  <rect x="12" y="8" width="40" height="48" rx="4" class="notebook"/>
+  
+  <!-- Spiral binding -->
+  <circle cx="18" cy="16" r="2" class="spiral"/>
+  <circle cx="18" cy="24" r="2" class="spiral"/>
+  <circle cx="18" cy="32" r="2" class="spiral"/>
+  <circle cx="18" cy="40" r="2" class="spiral"/>
+  <circle cx="18" cy="48" r="2" class="spiral"/>
+  
+  <!-- Lines on the page -->
+  <line x1="26" y1="20" x2="46" y2="20" class="lines"/>
+  <line x1="26" y1="26" x2="42" y2="26" class="lines"/>
+  <line x1="26" y1="32" x2="44" y2="32" class="lines"/>
+  <line x1="26" y1="38" x2="40" y2="38" class="lines"/>
+  <line x1="26" y1="44" x2="46" y2="44" class="lines"/>
+  
+  <!-- Pen -->
+  <rect x="46" y="12" width="3" height="16" rx="1.5" class="pen"/>
+  <polygon points="47.5,28 46,32 49,32" class="pen"/>
+  
+  <!-- Pen tip -->
+  <circle cx="47.5" cy="11" r="1" fill="#FCD34D"/>
+</svg>

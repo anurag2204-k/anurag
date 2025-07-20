@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Sun, Moon, Smartphone, Menu, X, Download, User, Zap, FolderOpen, Mail, ArrowUpRight } from 'lucide-react';
+import { Sun, Moon, Smartphone, Menu, X, Download, User, Zap, FolderOpen, Mail, ArrowUpRight, FileText } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 
 const Header = ({ theme, toggleTheme }) => {
@@ -26,6 +26,7 @@ const Header = ({ theme, toggleTheme }) => {
     { href: '#about', label: 'About', icon: User },
     { href: '#skills', label: 'Skills', icon: Zap },
     { href: '#projects', label: 'Projects', icon: FolderOpen },
+    { href: '/notes', label: 'Notes', icon: FileText },
     { href: '#contact', label: 'Contact', icon: Mail },
   ];
 
@@ -80,29 +81,55 @@ const Header = ({ theme, toggleTheme }) => {
                   onMouseEnter={() => setHoveredItem(item.label)}
                   onMouseLeave={() => setHoveredItem(null)}
                 >
-                  <motion.a
-                    href={item.href}
-                    className={`relative text-sm font-medium tracking-wide transition-colors duration-300 ${
-                      theme === 'dark' 
-                        ? 'text-white/70 hover:text-white' 
-                        : 'text-black/70 hover:text-black'
-                    }`}
-                    whileHover={{ y: -1 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <span className="relative z-10 flex items-center gap-2">
-                      <item.icon className="w-4 h-4" />
-                      {item.label}
-                    </span>
+                  {item.href.startsWith('#') ? (
+                    <motion.a
+                      href={item.href}
+                      className={`relative text-sm font-medium tracking-wide transition-colors duration-300 ${
+                        theme === 'dark' 
+                          ? 'text-white/70 hover:text-white' 
+                          : 'text-black/70 hover:text-black'
+                      }`}
+                      whileHover={{ y: -1 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <span className="relative z-10 flex items-center gap-2">
+                        <item.icon className="w-4 h-4" />
+                        {item.label}
+                      </span>
 
-                    {/* Hover underline */}
-                    <motion.div
-                      className={`absolute bottom-0 left-0 h-px ${theme === 'dark' ? 'bg-white' : 'bg-black'}`}
-                      initial={{ width: 0 }}
-                      animate={{ width: hoveredItem === item.label ? '100%' : 0 }}
-                      transition={{ duration: 0.3, ease: 'easeOut' }}
-                    />
-                  </motion.a>
+                      {/* Hover underline */}
+                      <motion.div
+                        className={`absolute bottom-0 left-0 h-px ${theme === 'dark' ? 'bg-white' : 'bg-black'}`}
+                        initial={{ width: 0 }}
+                        animate={{ width: hoveredItem === item.label ? '100%' : 0 }}
+                        transition={{ duration: 0.3, ease: 'easeOut' }}
+                      />
+                    </motion.a>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      className={`relative text-sm font-medium tracking-wide transition-colors duration-300 ${
+                        theme === 'dark' 
+                          ? 'text-white/70 hover:text-white' 
+                          : 'text-black/70 hover:text-black'
+                      }`}
+                    >
+                      <motion.div whileHover={{ y: -1 }} transition={{ duration: 0.2 }}>
+                        <span className="relative z-10 flex items-center gap-2">
+                          <item.icon className="w-4 h-4" />
+                          {item.label}
+                        </span>
+
+                        {/* Hover underline */}
+                        <motion.div
+                          className={`absolute bottom-0 left-0 h-px ${theme === 'dark' ? 'bg-white' : 'bg-black'}`}
+                          initial={{ width: 0 }}
+                          animate={{ width: hoveredItem === item.label ? '100%' : 0 }}
+                          transition={{ duration: 0.3, ease: 'easeOut' }}
+                        />
+                      </motion.div>
+                    </Link>
+                  )}
                 </motion.div>
               ))}
             </div>
@@ -234,25 +261,50 @@ const Header = ({ theme, toggleTheme }) => {
               transition={{ delay: 0.1, duration: 0.4 }}
             >
               {navItems.map((item, index) => (
-                <motion.a
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className={`text-4xl font-bold tracking-tight transition-colors duration-300 ${
-                    theme === 'dark' 
-                      ? 'text-white/70 hover:text-white' 
-                      : 'text-black/70 hover:text-black'
-                  }`}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 + 0.2, duration: 0.5 }}
-                  whileHover={{ scale: 1.05, x: 10 }}
-                >
-                  <span className="flex items-center gap-4">
-                    <item.icon className="w-8 h-8" />
-                    {item.label}
-                  </span>
-                </motion.a>
+                item.href.startsWith('#') ? (
+                  <motion.a
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`text-4xl font-bold tracking-tight transition-colors duration-300 ${
+                      theme === 'dark' 
+                        ? 'text-white/70 hover:text-white' 
+                        : 'text-black/70 hover:text-black'
+                    }`}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 + 0.2, duration: 0.5 }}
+                    whileHover={{ scale: 1.05, x: 10 }}
+                  >
+                    <span className="flex items-center gap-4">
+                      <item.icon className="w-8 h-8" />
+                      {item.label}
+                    </span>
+                  </motion.a>
+                ) : (
+                  <Link
+                    key={item.href}
+                    to={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`text-4xl font-bold tracking-tight transition-colors duration-300 ${
+                      theme === 'dark' 
+                        ? 'text-white/70 hover:text-white' 
+                        : 'text-black/70 hover:text-black'
+                    }`}
+                  >
+                    <motion.div
+                      initial={{ opacity: 0, y: 30 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 + 0.2, duration: 0.5 }}
+                      whileHover={{ scale: 1.05, x: 10 }}
+                    >
+                      <span className="flex items-center gap-4">
+                        <item.icon className="w-8 h-8" />
+                        {item.label}
+                      </span>
+                    </motion.div>
+                  </Link>
+                )
               ))}
 
               {/* Mobile Actions */}

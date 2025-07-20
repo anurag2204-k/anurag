@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/landing/LandingPage';
 import HereWeGo from './pages/HereWeGo';
+import Notes from './pages/Notes';
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
@@ -20,9 +21,10 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<LandingPage theme={theme} toggleTheme={toggleTheme} />} />
+      <Route path="/notes" element={<Notes theme={theme} />} />
       <Route path="/iphone-demo" element={
         <div className="h-screen w-full flex justify-center items-center bg-gray-300 dark:bg-gray-800 p-4 no-scrollbar">
-          <HereWeGo />
+          <HereWeGo theme={theme} />
         </div>
       } />
     </Routes>
