@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt Engineering Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-bg: #0d1117;
+            --primary-blue: #3b82f6;
+            --light-blue: #60a5fa;
+            --card-bg: #161b22;
+            --border-color: #30363d;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent-green: #238636;
+            --font-primary: 'Poppins', sans-serif;
+            --font-mono: 'Roboto Mono', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.7;
+            color: var(--text-primary);
+            background-color: var(--dark-bg);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(13, 17, 23, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1.25rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 0.25rem 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+        
+        .nav-link.active {
+            color: white;
+            border-bottom-color: var(--primary-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 6rem 0;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            color: white;
+            line-height: 1.2;
+        }
+
+        .hero .highlight {
+            color: var(--primary-blue);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            color: var(--text-secondary);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: white;
+            padding: 0.8rem 2.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            background: var(--light-blue);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        .main-content {
+            padding-top: 2rem;
+            padding-bottom: 4rem;
+        }
+
+        .content-section {
+            display: none;
+            padding: 2rem 0;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: white;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+        }
+
+        /* Module & Info Cards */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary-blue);
+        }
+
+        .card h3 {
+            color: var(--light-blue);
+            margin-bottom: 0.75rem;
+            font-size: 1.3rem;
+        }
+        
+        .card h4 {
+            color: var(--text-primary);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .card p, .card li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .card ul {
+            list-style-position: inside;
+            padding-left: 0.5rem;
+        }
+
+        .module-badge {
+            display: inline-block;
+            background-color: var(--border-color);
+            color: var(--text-primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-top: 1rem;
+        }
+
+        /* Framework Visualization */
+        .steps-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .step {
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            flex-basis: 160px;
+        }
+
+        .step-number {
+            background-color: var(--primary-blue);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 0 auto 1rem;
+        }
+        
+        .step h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        
+        .step p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Prompt Examples */
+        .prompt-example {
+            background-color: var(--dark-bg);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .prompt-label {
+            background: var(--primary-blue);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .prompt-text {
+            font-family: var(--font-mono);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+        
+        .prompt-text strong {
+            color: var(--text-primary);
+        }
+
+        /* Interactive Demo */
+        .interactive-demo {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+        }
+        
+        .interactive-demo h3 {
+            text-align: center;
+            font-size: 1.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .demo-input {
+            width: 100%;
+            padding: 0.9rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-family: var(--font-primary);
+            background-color: var(--dark-bg);
+            color: var(--text-primary);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .demo-input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .demo-input:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
+        }
+
+        .demo-button {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: block;
+            width: fit-content;
+            margin: 1rem auto 0;
+        }
+
+        .demo-button:hover {
+            background-color: var(--light-blue);
+        }
+
+        /* Tip Box */
+        .tip-box {
+            background-color: rgba(35, 134, 54, 0.15);
+            color: #c9d1d9;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 4px solid var(--accent-green);
+        }
+        
+        .tip-box strong {
+            color: #58a6ff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .nav-menu {
+                display: none; /* Simplification for mobile; a hamburger menu would be the next step */
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="logo">🚀 Prompt Academy</a>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active" data-section="overview">Overview</a></li>
+                <li><a href="#" class="nav-link" data-section="modules">Modules</a></li>
+                <li><a href="#" class="nav-link" data-section="framework">TCREI Framework</a></li>
+                <li><a href="#" class="nav-link" data-section="examples">Examples</a></li>
+                <li><a href="#" class="nav-link" data-section="advanced">Advanced</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Master the Art of <span class="highlight">AI Communication</span></h1>
+                <p>Learn Google's proven TCREI framework and advanced techniques to become a prompt engineering expert. Unlock the full potential of generative AI.</p>
+                <a href="#" class="cta-button" onclick="showSection('modules')">Start Learning Now</a>
+            </div>
+        </section>
+
+        <div class="main-content container">
+            <section id="overview" class="content-section active">
+                <h2>Course Overview</h2>
+                <p style="text-align: center; color: var(--text-secondary); max-width: 800px; margin: -1rem auto 3rem;">A comprehensive 4-module course designed to teach effective prompt engineering. No prior experience required.</p>
+                
+                <div class="grid-layout">
+                    <div class="card" onclick="showSection('modules')">
+                        <h3>🏗️ Foundation Building</h3>
+                        <p>Learn the TCREI framework and core prompting principles.</p>
+                        <span class="module-badge">Module 1</span>
+                    </div>
+                    <div class="card" onclick="showSection('modules')">
+                        <h3>💼 Workplace Applications</h3>
+                        <p>Apply prompting to everyday work tasks and communication.</p>
+                        <span class="module-badge">Module 2</span>
+                    </div>
+                    <div class="card" onclick="showSection('modules')">
+                        <h3>📊 Data & Analytics</h3>
+                        <p>Speed up data analysis and presentation building.</p>
+                        <span class="module-badge">Module 3</span>
+                    </div>
+                    <div class="card" onclick="showSection('advanced')">
+                        <h3>🧠 Advanced Techniques</h3>
+                        <p>Master prompt chaining, AI agents, and expert-level methods.</p>
+                        <span class="module-badge">Module 4</span>
+                    </div>
+                </div>
+
+                <div class="tip-box">
+                    <strong>Guiding Principle:</strong> Prompting is an iterative process. You'll rarely get a perfect result on your first attempt. The key is continuous refinement and clear communication.
+                </div>
+            </section>
+
+            <section id="modules" class="content-section">
+                <h2>Learning Modules</h2>
+                 <div class="card" style="margin-bottom: 1.5rem;">
+                    <h3>Module 1: Start Writing Prompts Like a Pro</h3>
+                    <p><strong>Foundation:</strong> Master the TCREI framework and core enhancement techniques.</p>
+                    <h4>🔑 Key Concepts:</h4>
+                    <ul>
+                        <li><strong>Persona Assignment:</strong> "Act as a seasoned historian..."</li>
+                        <li><strong>Output Formatting:</strong> Specify structure (tables, JSON, lists).</li>
+                        <li><strong>Specificity:</strong> More context and constraints lead to better results.</li>
+                        <li><strong>ABI Principle:</strong> Always Be Iterating.</li>
+                    </ul>
+                    <h4>🔄 RSTI Iteration Methods:</h4>
+                    <div class="steps-grid">
+                        <div class="step"><div class="step-number">R</div><h4>Revisit</h4><p>Add context</p></div>
+                        <div class="step"><div class="step-number">S</div><h4>Separate</h4><p>Break down prompt</p></div>
+                        <div class="step"><div class="step-number">T</div><h4>Try</h4><p>Different phrasing</p></div>
+                        <div class="step"><div class="step-number">I</div><h4>Introduce</h4><p>Add constraints</p></div>
+                    </div>
+                </div>
+                <div class="card" style="margin-bottom: 1.5rem;">
+                    <h3>Module 2: Design Prompts for Everyday Work Tasks</h3>
+                    <p><strong>Application:</strong> Transform workplace productivity with AI assistance.</p>
+                    <div class="prompt-example">
+                        <div class="prompt-label">Email Tone Refinement</div>
+                        <p class="prompt-text">
+                            <strong>Before:</strong> "Write a casual summary" <br>
+                            <strong>After:</strong> "Write a summary of the key points in a friendly, easy-to-understand tone, as if you were explaining it to a curious new team member."
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>Module 3: Speed Up Data Analysis and Presentation Building</h3>
+                    <p><strong>Analytics:</strong> Leverage AI for data insights while maintaining privacy.</p>
+                    <div class="tip-box" style="background-color: rgba(187, 128, 9, 0.15); border-left-color: #f59e0b;">
+                        <strong>Privacy Alert:</strong> Never input confidential or proprietary information into public AI tools.
+                    </div>
+                </div>
+            </section>
+
+            <section id="framework" class="content-section">
+                <h2>The TCREI Framework</h2>
+                <p style="text-align: center; color: var(--text-secondary); max-width: 800px; margin: -1rem auto 3rem;">Master Google's 5-step systematic approach to prompt engineering. A helpful memory aid is: <strong>"Tiny Crabs Ride Enormous Iguanas"</strong>.</p>
+                <div class="steps-grid">
+                    <div class="step"><div class="step-number">T</div><h4>Task</h4><p>Define the action</p></div>
+                    <div class="step"><div class="step-number">C</div><h4>Context</h4><p>Provide background</p></div>
+                    <div class="step"><div class="step-number">R</div><h4>References</h4><p>Include examples</p></div>
+                    <div class="step"><div class="step-number">E</div><h4>Evaluate</h4><p>Assess the output</p></div>
+                    <div class="step"><div class="step-number">I</div><h4>Iterate</h4><p>Refine and improve</p></div>
+                </div>
+                <div class="interactive-demo">
+                    <h3>Interactive TCREI Builder</h3>
+                    <input type="text" class="demo-input" placeholder="Task: e.g., 'Write three subject lines for an email...'">
+                    <input type="text" class="demo-input" placeholder="Context: e.g., 'The email is for a new product launch...'">
+                    <input type="text" class="demo-input" placeholder="References: e.g., 'The tone should be exciting and professional...'">
+                    <button class="demo-button">Generate Prompt</button>
+                </div>
+            </section>
+
+            <section id="examples" class="content-section">
+                <h2>Prompt Examples & Best Practices</h2>
+                <div class="prompt-example">
+                    <div class="prompt-label">Email Writing - Professional</div>
+                    <p class="prompt-text">
+                        <strong>Task:</strong> Write a professional email to a client about a project delay.<br>
+                        <strong>Context:</strong> The delay was due to unexpected technical issues that are now resolved. The new delivery date is next Friday.<br>
+                        <strong>References:</strong> The tone should be professional but empathetic. Format as a subject line and a brief email body under 150 words.
+                    </p>
+                </div>
+                <div class="prompt-example">
+                    <div class="prompt-label">Content Creation - Social Media</div>
+                    <p class="prompt-text">
+                        <strong>Task:</strong> Create 3 engaging Instagram post captions.<br>
+                        <strong>Context:</strong> For a new 30-day fitness challenge targeting busy professionals (25-40).<br>
+                        <strong>References:</strong> Use a motivational and encouraging tone, similar to major fitness brands. Include relevant hashtags.
+                    </p>
+                </div>
+                
+                <h3 style="text-align:center; margin-top: 4rem; margin-bottom: 2rem; color:white;">Common Pitfalls to Avoid</h3>
+                <div class="grid-layout">
+                    <div class="card">
+                        <h4>❌ Vague Instructions</h4>
+                        <p><strong>Don't:</strong> "Write something creative."</p>
+                        <p><strong>Do:</strong> "Write a 200-word story about a time-traveling chef in Victorian London."</p>
+                    </div>
+                    <div class="card">
+                        <h4>❌ Word Vomiting</h4>
+                        <p><strong>Don't:</strong> Put everything in one huge paragraph.</p>
+                        <p><strong>Do:</strong> Organize your prompt with clear sections like Task, Context, etc.</p>
+                    </div>
+                    <div class="card">
+                        <h4>❌ One-Shot Mentality</h4>
+                        <p><strong>Don't:</strong> Expect perfection on the first try.</p>
+                        <p><strong>Do:</strong> Plan to iterate and refine the prompt based on the AI's output.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="advanced" class="content-section">
+                <h2>Advanced Techniques</h2>
+                <div class="card" style="margin-bottom:1.5rem">
+                    <h3>🔗 Prompt Chaining</h3>
+                    <p>Connect multiple prompts to build complex solutions. The output of one prompt becomes the input for the next.</p>
+                    <div class="prompt-example">
+                        <div class="prompt-label">Chain Example - Content Strategy</div>
+                        <p class="prompt-text">
+                           <strong>1. Idea Generation:</strong> "List 10 trending topics in sustainable fashion for 2025."<br>
+                           <strong>2. Outlining:</strong> "Using the list above, create detailed outlines for the top 3 topics."<br>
+                           <strong>3. Drafting:</strong> "For the first outline, write a complete 800-word blog post."
+                        </p>
+                    </div>
+                </div>
+                <div class="card" style="margin-bottom:1.5rem">
+                    <h3>🤔 Chain of Thought (CoT) Prompting</h3>
+                    <p>Ask the AI to "think step by step" to improve its reasoning on complex problems.</p>
+                    <div class="prompt-example">
+                        <div class="prompt-label">CoT Example - Problem Solving</div>
+                        <p class="prompt-text">
+                           "A SaaS company has 1000 free users but only a 5% conversion rate. The trial is 14 days. How would you improve this? Think through this systematically and explain your reasoning step-by-step."
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h3>🤖 AI Agent Creation</h3>
+                    <p>Create specialized AI assistants for specific tasks using a detailed persona and interaction rules.</p>
+                     <div class="prompt-example">
+                        <div class="prompt-label">Agent Example - Interview Prep</div>
+                        <p class="prompt-text">
+                            <strong>Persona:</strong> You are an experienced HR director at a top tech company.<br>
+                            <strong>Context:</strong> I'm preparing for a senior software engineer interview. <br>
+                            <strong>Interactions:</strong> Conduct a realistic interview. Ask challenging questions and provide feedback after each answer.<br>
+                            <strong>Start now.**
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            const targetSection = document.getElementById(sectionId);
+            if (targetSection) targetSection.classList.add('active');
+            
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('data-section') === sectionId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const sectionId = this.getAttribute('data-section');
+                    if (sectionId) {
+                        showSection(sectionId);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

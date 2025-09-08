@@ -69,9 +69,11 @@ const About = () => {
               <div className="aspect-square bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 p-1">
                 <div className="w-full h-full bg-white dark:bg-slate-800 rounded-xl flex items-center justify-center">
                   <div className="text-center">
-                    <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-4xl font-bold text-white">A</span>
-                    </div>
+                    <img
+                      src="anurag.png" // Replace with your actual image path
+                      alt="Anurag"
+                      className="w-80 h-80 rounded-full mx-auto mb-4 object-cover"
+                    />
                     <h3 className="text-xl font-bold text-slate-800 dark:text-white mb-2">Anurag</h3>
                     <p className="text-slate-600 dark:text-slate-300">Full Stack Developer</p>
                   </div>

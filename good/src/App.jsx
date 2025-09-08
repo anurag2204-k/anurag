@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import LandingPage from './pages/landing/LandingPage';
 import HereWeGo from './pages/HereWeGo';
