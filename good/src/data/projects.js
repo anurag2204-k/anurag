@@ -1,47 +1,47 @@
 export const projects = [
   {
-  "id": "anomsched",
-  "title": "AnomSched - Advanced Thread Pool Scheduler",
-  "shortDescription": "High-performance thread pool with real-time anomaly detection and visualization",
-  "description":
-    "Designed and implemented a sophisticated thread pool scheduler in C++ with advanced anomaly detection capabilities. Built a comprehensive real-time performance monitoring system that captures microsecond-precision metrics for concurrent job execution. Developed statistical anomaly detection algorithms that identify unusual execution patterns with 95%+ accuracy. Created an extensive Python-based visualization suite with interactive dashboards for analyzing scheduler performance, bottlenecks, and thread utilization. Systematically injected various anomaly types (CPU spikes, memory pressure, I/O delays, thread contention) to validate detection methodologies.",
-  "thumbnail": "/anomsched/dashboard.png",
-  "images": [
-    "/anomsched/thread-utilization.png",
-    "/anomsched/anomaly-detection.png",
-    "/anomsched/performance-metrics.png",
-    "/anomsched/scheduler-architecture.png",
-    "/anomsched/statistical-analysis.png",
-    "/anomsched/throughput-trends.png"
-  ],
-  "technologies": [
-    "C++17",
-    "CMake",
-    "Python",
-    "pandas",
-    "matplotlib",
-    "seaborn",
-    "plotly",
-    "NumPy",
-    "Thread Synchronization",
-    "Statistical Analysis",
-    "Z-score Detection",
-    "IQR Method"
-  ],
-  "features": [
-    "Configurable thread pool with priority-based job scheduling",
-    "Real-time anomaly detection using statistical methods",
-    "Comprehensive performance logging with microsecond precision",
-    "Interactive visualization dashboard with multi-dimensional analysis",
-    "Four distinct anomaly types (CPU, memory, I/O, contention)",
-    "Thread-safe operations with mutex and condition variables",
-    "Dynamic workload balancing across worker threads",
-    "Multiple statistical detection methods (Z-score, IQR)",
-    "Detailed throughput and efficiency metrics",
-    "Extensible for distributed system implementation"
-  ],
-  githubUrl: "https://github.com/anurag2204-k/AnomSched"
-},
+    "id": "anomsched",
+    "title": "AnomSched - Advanced Thread Pool Scheduler",
+    "shortDescription": "High-performance thread pool with real-time anomaly detection and visualization",
+    "description":
+      "Designed and implemented a sophisticated thread pool scheduler in C++ with advanced anomaly detection capabilities. Built a comprehensive real-time performance monitoring system that captures microsecond-precision metrics for concurrent job execution. Developed statistical anomaly detection algorithms that identify unusual execution patterns with 95%+ accuracy. Created an extensive Python-based visualization suite with interactive dashboards for analyzing scheduler performance, bottlenecks, and thread utilization. Systematically injected various anomaly types (CPU spikes, memory pressure, I/O delays, thread contention) to validate detection methodologies.",
+    "thumbnail": "/anomsched/aaa.png",
+    "images": [
+      // "/anomsched/thread-utilization.png",
+      // "/anomsched/anomaly-detection.png",
+      // "/anomsched/performance-metrics.png",
+      // "/anomsched/scheduler-architecture.png",
+      // "/anomsched/statistical-analysis.png",
+      // "/anomsched/throughput-trends.png"
+    ],
+    "technologies": [
+      "C++17",
+      "CMake",
+      "Python",
+      "pandas",
+      "matplotlib",
+      "seaborn",
+      "plotly",
+      "NumPy",
+      "Thread Synchronization",
+      "Statistical Analysis",
+      "Z-score Detection",
+      "IQR Method"
+    ],
+    "features": [
+      "Configurable thread pool with priority-based job scheduling",
+      "Real-time anomaly detection using statistical methods",
+      "Comprehensive performance logging with microsecond precision",
+      "Interactive visualization dashboard with multi-dimensional analysis",
+      "Four distinct anomaly types (CPU, memory, I/O, contention)",
+      "Thread-safe operations with mutex and condition variables",
+      "Dynamic workload balancing across worker threads",
+      "Multiple statistical detection methods (Z-score, IQR)",
+      "Detailed throughput and efficiency metrics",
+      "Extensible for distributed system implementation"
+    ],
+    githubUrl: "https://github.com/anurag2204-k/AnomSched"
+  },
   {
     id: "newzsage",
     title: "Newz Sage",
@@ -76,20 +76,21 @@ export const projects = [
     ],
     liveUrl: "https://newz-sage.vercel.app",
     githubUrl: "https://github.com/anurag2204-k/newzsage",
-  },{
+  }, {
     id: "placement-portal",
     title: "IIIT Nagpur Placement Portal",
     shortDescription: "Comprehensive platform streamlining campus recruitment processes",
     description:
       "Designed and developed a full-stack placement management system for IIIT Nagpur using Next.js App Router and MongoDB. Implemented role-based access control with secure authentication for 500+ students and administrators. Built a dynamic form builder with auto-fill capabilities, reducing form completion time by 70%. Integrated an AI-powered chatbot for placement policy assistance and developed real-time analytics dashboards with data visualization for placement trends and statistics.",
-    thumbnail: "/placement-portal/dashboard.png",
+    thumbnail: "/placement-portal/ppp.png",
     images: [
-      "/placement-portal/admin-dashboard.png",
-      "/placement-portal/form-builder.png",
-      "/placement-portal/student-profile.png",
-      "/placement-portal/analytics.png",
-      "/placement-portal/forum.png",
-      "/placement-portal/chatbot.png",
+      // "C:\\Users\\anurag\\Desktop\\anurag\\good\\public\\placement-portal\\dashboard.png",
+      "/placement-portal/ppp.png",
+      // "/placement-portal/form-builder.png",
+      // "/placement-portal/student-profile.png",
+      // "/placement-portal/analytics.png",
+      // "/placement-portal/forum.png",
+      // "/placement-portal/chatbot.png",
     ],
     technologies: [
       "Next.js",
@@ -160,9 +161,9 @@ export const projects = [
       "Built a Discord-like platform with Next.js, TypeScript, and Tailwind using ShadCN for a modern UI. Integrated LiveKit for seamless video/audio calls, Socket.IO for real-time messaging, and Clerk for secure user authentication.",
     thumbnail: "/discord/discord.jpg",
     images: [
-      "/projects/betterteam/screen1.png",
-      "/projects/betterteam/screen2.png",
-      "/projects/betterteam/screen3.png",
+      // "/projects/betterteam/screen1.png",
+      // "/projects/betterteam/screen2.png",
+      // "/projects/betterteam/screen3.png",
     ],
     technologies: [
       "Next.js",
@@ -200,5 +201,5 @@ export const projects = [
     liveUrl: "https://discord-clone-gules-nine.vercel.app/",
     githubUrl: "https://github.com/anurag2204-k/discordd",
   },
-  
+
 ];

@@ -1,7 +1,121 @@
 import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Grid, Search, Filter, Github, ExternalLink, Code, Zap, Calendar, Eye, Heart } from 'lucide-react';
+import { Grid, Search, Filter, Github, ExternalLink, Code, Zap, Calendar, Eye, Heart, Users } from 'lucide-react';
 import { projects } from '../../data/projects';
+
+const ProjectModal = ({ project, onClose }) => {
+  if (!project) return null;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4"
+      onClick={onClose}
+    >
+      <motion.div
+        initial={{ scale: 0.9, y: 20 }}
+        animate={{ scale: 1, y: 0 }}
+        exit={{ scale: 0.9, y: 20 }}
+        onClick={(e) => e.stopPropagation()}
+        className="bg-white dark:bg-slate-800 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto no-scrollbar shadow-2xl"
+      >
+        <div className="p-8">
+          <div className="flex justify-between items-start mb-6">
+            <div>
+              <h2 className="text-3xl font-bold text-slate-800 dark:text-white mb-2">
+                {project.title}
+              </h2>
+              <p className="text-slate-600 dark:text-slate-300">
+                {project.shortDescription}
+              </p>
+            </div>
+            <button
+              onClick={onClose}
+              className="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+            >
+              ✕
+            </button>
+          </div>
+
+          {project.thumbnail && (
+            <div className="mb-6 rounded-2xl overflow-hidden">
+              <img
+                src={project.thumbnail}
+                alt={project.title}
+                className="w-full h-64 object-cover"
+              />
+            </div>
+          )}
+
+          <p className="text-slate-700 dark:text-slate-300 mb-6 leading-relaxed">
+            {project.description}
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <h3 className="font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
+                <Code className="w-5 h-5" />
+                Technologies
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {project.technologies.map((tech, index) => (
+                  <span
+                    key={index}
+                    className="px-3 py-1 bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 text-slate-700 dark:text-slate-300 rounded-full text-sm"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="font-bold text-slate-800 dark:text-white mb-3 flex items-center gap-2">
+                <Zap className="w-5 h-5" />
+                Key Features
+              </h3>
+              <ul className="space-y-1 text-sm text-slate-600 dark:text-slate-400">
+                {project.features?.slice(0, 5).map((feature, index) => (
+                  <li key={index} className="flex items-start gap-2">
+                    <span className="text-blue-500 mt-1">•</span>
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div className="flex gap-4">
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+              >
+                <ExternalLink className="w-4 h-4" />
+                Live Demo
+              </a>
+            )}
+            {project.githubUrl && (
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-6 py-3 bg-slate-800 dark:bg-slate-700 text-white rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+              >
+                <Github className="w-4 h-4" />
+                Source Code
+              </a>
+            )}
+          </div>
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+};
 
 const ProjectCard = ({ project, index, onClick }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -73,12 +187,7 @@ const ProjectCard = ({ project, index, onClick }) => {
                 className="p-3 bg-blue-600/80 backdrop-blur-sm rounded-full text-white hover:bg-blue-600 transition-colors"
                 onClick={(e) => {
                   e.stopPropagation();
-                  if (project.liveUrl) {
-                    window.open(project.liveUrl, '_blank');
-                  } else {
-                    // If no live URL, trigger the card click to open modal
-                    onProjectClick(project);
-                  }
+                  onClick();
                 }}
               >
                 <Eye className="w-5 h-5" />
@@ -360,6 +469,16 @@ const AllProjects = () => {
           ))}
         </motion.div>
       </div>
+
+      {/* Project Modal */}
+      <AnimatePresence>
+        {selectedProject && (
+          <ProjectModal
+            project={selectedProject}
+            onClose={() => setSelectedProject(null)}
+          />
+        )}
+      </AnimatePresence>
     </section>
   );
 };
