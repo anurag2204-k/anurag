@@ -26,7 +26,7 @@ const Header = ({ theme, toggleTheme }) => {
     { href: '#about', label: 'About', icon: User },
     { href: '#skills', label: 'Skills', icon: Zap },
     { href: '#projects', label: 'Projects', icon: FolderOpen },
-    { href: '/notes', label: 'Notes', icon: FileText },
+    // { href: '/notes', label: 'Notes', icon: FileText },
     { href: '#contact', label: 'Contact', icon: Mail },
   ];
 
