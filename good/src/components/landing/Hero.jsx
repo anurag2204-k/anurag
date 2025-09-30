@@ -128,7 +128,7 @@ const Hero = ({ theme = 'dark' }) => {
             </motion.a> */}
             
             <motion.a
-              href="/resume.pdf"
+              href="https://drive.google.com/file/d/1gwymiX2sALJZ8qWQITR2ghVLY5Yf-kVb/view?pli=1"
               download="Anurag_Resume.pdf"
               className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 group"
               whileHover={{ scale: 1.05 }}

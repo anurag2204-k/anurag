@@ -138,7 +138,7 @@ const Header = ({ theme, toggleTheme }) => {
             <div className="flex items-center space-x-4">
               {/* Resume Button */}
               {/* <motion.a
-                href="/resume.pdf"
+                href="https://drive.google.com/file/d/1gwymiX2sALJZ8qWQITR2ghVLY5Yf-kVb/view?pli=1"
                 download="Anurag_Resume.pdf"
                 className={`flex items-center gap-2 px-4 py-2 border rounded-full transition-all duration-300 ${
                   theme === 'dark'
@@ -310,7 +310,7 @@ const Header = ({ theme, toggleTheme }) => {
               {/* Mobile Actions */}
               <div className="flex flex-col items-center space-y-4 mt-8">
                 <motion.a
-                  href="/resume.pdf"
+                  href="https://drive.google.com/file/d/1gwymiX2sALJZ8qWQITR2ghVLY5Yf-kVb/view?pli=1"
                   download="Anurag_Resume.pdf"
                   onClick={() => setIsMenuOpen(false)}
                   className={`flex items-center gap-3 px-6 py-3 border rounded-full transition-all duration-300 ${

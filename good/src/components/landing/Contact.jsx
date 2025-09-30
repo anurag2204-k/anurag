@@ -293,7 +293,7 @@ const Contact = () => {
                 Get a comprehensive overview of my experience, skills, and achievements in a professional format.
               </p>
               <motion.a
-                href="/resume.pdf"
+                href="https://drive.google.com/file/d/1gwymiX2sALJZ8qWQITR2ghVLY5Yf-kVb/view?pli=1"
                 download="Anurag_Resume.pdf"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
