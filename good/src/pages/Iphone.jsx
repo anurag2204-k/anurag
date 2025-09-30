@@ -6,6 +6,7 @@ import AboutUs from './Aboutus';
 import MobileSkillsPage from './MobileSkillsPage';
 import ProjectsPage from '../components/ProjectsPage';
 import TicTacToe from './TicTacToe ';
+import SnakeGame from './SnakeGame';
 import app from '/app.png';
 import brain from '/brain.png';
 import github from '/github.png';
@@ -21,6 +22,7 @@ import leetcode from '/leetcode.png'
 import discord from '/discord.png'
 import resume from '/resume.png'
 import tictactoe from '/tictactoe.svg'
+import snake from '/snake.png'
 
 const IPhoneScreen = ({ children, theme = 'dark' }) => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -37,7 +39,8 @@ const IPhoneScreen = ({ children, theme = 'dark' }) => {
     // { name: 'Timid', icon: brain, content: <Timid /> },
     { name: 'Skills', icon: brain, content: <MobileSkillsPage /> },
     { name: 'Projects', icon: app, content: <ProjectsPage isIPhoneContext={true} /> },
-    { name: 'Tic Tac Toe', icon: tictactoe, content: <TicTacToe theme={theme} /> }
+    { name: 'Tic Tac Toe', icon: tictactoe, content: <TicTacToe theme={theme} /> },
+    { name: 'Snake', icon: snake, content: <SnakeGame theme={theme} /> }
   ];
   const linked = [
     { name: 'Github', icon: github, to:"https://github.com/anurag2204-k"},

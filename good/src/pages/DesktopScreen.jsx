@@ -23,8 +23,10 @@ import leetcode from '/leetcode.png'
 import discord from '/discord.png'
 import resume from '/resume.png'
 import tictactoe from '/tictactoe.svg'
+import snake from '/snake.png'
 
 import TicTacToe from './TicTacToe ';
+import SnakeGame from './SnakeGame';
 
 const DesktopScreen = ({ children, theme = 'dark' }) => {
   const [currentTime, setCurrentTime] = useState(new Date());
@@ -62,7 +64,8 @@ const DesktopScreen = ({ children, theme = 'dark' }) => {
     // { name: 'Timid', icon: brain, content: <Timid /> },
     { name: 'Skills', icon: brain, content: <SkillsPage /> },
     { name: 'Projects', icon: app, content: <ProjectsPage /> },
-    { name: 'Tic Tac Toe', icon: tictactoe, content: <TicTacToe theme={theme} /> }
+    { name: 'Tic Tac Toe', icon: tictactoe, content: <TicTacToe theme={theme} /> },
+    { name: 'Snake', icon: snake, content: <SnakeGame theme={theme} /> }
   ];
   const linked = [
     { name: 'Github', icon: github, to:"https://github.com/anurag2204-k"},
